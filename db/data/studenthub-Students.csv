@@ -1,0 +1,5 @@
+ID;rollNo;name;email;phone;dateOfBirth;address_street;address_city;address_state;address_pincode;department_code;status_code;bpNumber
+arjun;CSE2601;Arjun Mehta;arjun.mehta@studenthub.example;+91 90000 10001;2007-03-14;12 MG Road;Bengaluru;Karnataka;560001;CSE;A;20000001
+diya;CSE2602;Diya Sharma;diya.sharma@studenthub.example;+91 90000 10002;2007-07-02;4 Anna Salai;Chennai;Tamil Nadu;600002;CSE;A;20000002
+kabir;ECE2601;Kabir Singh;kabir.singh@studenthub.example;;2006-11-21;;;;;ECE;A;20000003
+meera;CSE2603;Meera Iyer;meera.iyer@studenthub.example;;2007-01-30;;;;400001;CSE;P;

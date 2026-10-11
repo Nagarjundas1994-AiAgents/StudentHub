@@ -1,0 +1,4 @@
+code;name;descr;criticality
+P;Applied;Application received, not yet admitted;2
+A;Admitted;Admitted and allowed to enroll;3
+G;Graduated;Finished the programme;0
