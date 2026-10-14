@@ -25,14 +25,8 @@ entity Students : managed {
 entity Courses : managed {
   key code     : String(10);
       title    : String(100) @mandatory;
-      credits  : Integer     @assert.range: [
-        1,
-        6
-      ];
-      capacity : Integer     @assert.range: [
-        1,
-        300
-      ];
+      credits  : Integer     @assert.range: [ 1, 6 ];
+      capacity : Integer     @assert.range: [1,  300 ];
       teacher  : String(100);
 }
 
