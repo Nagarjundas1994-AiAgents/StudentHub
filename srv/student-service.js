@@ -23,10 +23,6 @@ export default class StudentService extends cds.ApplicationService {
                 req.error(400, 'Email is required');
             }
 
-            if (!req.data.age || req.data.age < 18) {
-                req.error(400, 'Age must be at least 18');
-            }
-
         });
 
         // =====================================
@@ -108,6 +104,60 @@ export default class StudentService extends cds.ApplicationService {
             return true;
         });
 
+        // =====================================
+        // 5. UNBOUND ACTION: Admit all CSE applicants
+        // =====================================
+        this.on('admitAllCSEApplicants', async (req) => {
+            const cseApplicants = await SELECT.from(Students).where({ department: 'CSE' });
+
+            if (cseApplicants.length === 0) {
+                return [];
+            }
+
+            const admittedStudents = await INSERT.into(Students).entries(cseApplicants);
+
+            return admittedStudents;
+        });
+
+        // =====================================
+        // 6. UNBOUND ACTION: Create a student
+        // =====================================
+        this.on('createStudent', async (req) => {
+            const { name, email, department, status,ID,bpNumber} = req.data;
+
+            const newStudent = await INSERT.into(Students).entries({
+                name,
+                email,
+                department,
+                status, 
+                ID, 
+                bpNumber
+            });
+
+            return newStudent;
+        });
+
+        // =====================================
+        // 7. UNBOUND ACTION: Update a student
+        // =====================================
+        this.on('updateStudent', async (req) => {
+            const { ID, name, email, department, status } = req.data;
+
+            const student = await SELECT.one.from(Students).where({ ID });
+
+            if (!student) {
+                return req.reject(404, `Student ${ID} not found`);
+            }
+
+            await UPDATE(Students).set({
+                name,
+                email,
+                department,
+                status
+            }).where({ ID });
+
+            return { message: `Student with ID ${ID} has been updated` };
+        });
 
 
 

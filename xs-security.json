@@ -1,6 +1,46 @@
+
 {
-  "scopes": [],
-  "attributes": [],
-  "role-templates": [],
+  "xsappname": "StudentHub",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.admin",
+      "description": "Administrator access"
+    },
+    {
+      "name": "$XSAPPNAME.manager",
+      "description": "Manager access"
+    },
+    {
+      "name": "$XSAPPNAME.user",
+      "description": "Standard user access"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "admin",
+      "description": "StudentHub Administrator",
+      "scope-references": [
+        "$XSAPPNAME.admin",
+        "$XSAPPNAME.manager",
+        "$XSAPPNAME.user"
+      ]
+    },
+    {
+      "name": "manager",
+      "description": "StudentHub Manager",
+      "scope-references": [
+        "$XSAPPNAME.manager",
+        "$XSAPPNAME.user"
+      ]
+    },
+    {
+      "name": "user",
+      "description": "StudentHub Standard User",
+      "scope-references": [
+        "$XSAPPNAME.user"
+      ]
+    }
+  ],
   "authorities-inheritance": false
 }

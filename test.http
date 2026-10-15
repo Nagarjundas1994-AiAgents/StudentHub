@@ -1,200 +1,415 @@
-@base = http://localhost:4004/student-service
+# @base = http://localhost:4004/student-service
 
-### ==========================================
-### 1. SERVICE METADATA
-### ==========================================
-GET {{base}}/$metadata
-
-
-### ==========================================
-### 2. READ ALL STUDENTS
-### ==========================================
-GET {{base}}/Students
-
-//get total number of students
-###
-GET {{base}}/getTotalStudent()
+# ### ==========================================
+# ### 1. SERVICE METADATA
+# ### ==========================================
+# GET {{base}}/$metadata
 
 
+# ### ==========================================
+# ### 2. READ ALL STUDENTS
+# ### ==========================================
+# GET {{base}}/Students
+
+# //get total number of students
+# ###
+# GET {{base}}/getTotalStudent()
+
+
+# ### ==========================================
+# ### 3. READ ONE STUDENT
+# ### ==========================================
+# GET {{base}}/Students(ID='arjun')
+
+
+# ### ==========================================
+# ### 4. CREATE A STUDENT
+# ### ==========================================
+# POST {{base}}/Students
+# Content-Type: application/json
+
+# {
+#   "ID": "rahul",
+#   "name": "Rahul Das",
+#   "email": "rahul@example.com",
+#   "department": "CSE",
+#   "status": "applied"
+# }
+
+
+# ### ==========================================
+# ### 5. UPDATE A STUDENT
+# ### ==========================================
+# PATCH {{base}}/Students(ID='rahul')
+# Content-Type: application/json
+
+# {
+#   "department": "ECE"
+# }
+
+
+# ### ==========================================
+# ### 6. BOUND ACTION: ADMIT ONE STUDENT
+# ### ==========================================
+# POST {{base}}/Students(ID='arjun')/StudentService.admit
+# Content-Type: application/json
+
+# {}
+
+
+# ### ==========================================
+# ### 7. BOUND ACTION: CHANGE DEPARTMENT
+# ### ==========================================
+# POST {{base}}/Students(ID='arjun')/StudentService.changeDepartment
+# Content-Type: application/json
+
+# {
+#   "department": "MEC"
+# }
+
+
+# ### ==========================================
+# ### 8. BOUND FUNCTION: COUNT ENROLLMENTS
+# ### ==========================================
+# GET {{base}}/Students(ID='arjun')/StudentService.enrollmentCount()
+
+
+# ### ==========================================
+# ### 9. UNBOUND ACTION: ADMIT ALL CSE APPLICANTS
+# ### ==========================================
+# POST {{base}}/admitAll
+# Content-Type: application/json
+
+# {
+#   "department": "CSE"
+# }
+
+
+# ### ==========================================
+# ### 10. UNBOUND ACTION: DELETE STUDENT
+# ### ==========================================
+# POST {{base}}/deleteStudent()
+# Content-Type: application/json
+
+# {
+#   "ID": "rahul"
+# }
+
+
+# ### ==========================================
+# ### 11. UNBOUND FUNCTION: COUNT STUDENTS
+# ### ==========================================
+# GET {{base}}/studentCount()
+
+
+# ### ==========================================
+# ### 12. UNBOUND FUNCTION: FIND STUDENTS BY DEPARTMENT
+# ### ==========================================
+# GET {{base}}/studentsByDepartment(department='CSE')
+
+
+# ### ==========================================
+# ### 13. STANDARD CRUD: DELETE STUDENT
+# ### ==========================================
+# DELETE {{base}}/Students(ID='rahul')
+
+
+# ### ==========================================
+# ### 14. READ ALL COURSES
+# ### ==========================================
+# GET {{base}}/Courses
+
+
+# ### ==========================================
+# ### 15. CREATE A COURSE
+# ### ==========================================
+# POST {{base}}/Courses
+# Content-Type: application/json
+
+# {
+#   "code": "CS501",
+#   "title": "Advanced SAP CAP",
+#   "credits": 4,
+#   "capacity": 30,
+#   "teacher": "Dr. Priya Nair"
+# }
+
+
+# ### ==========================================
+# ### 16. UPDATE A COURSE
+# ### ==========================================
+# PATCH {{base}}/Courses(code='CS101')
+# Content-Type: application/json
+
+# {
+#   "capacity": 70
+# }
+
+
+# ### ==========================================
+# ### 17. DELETE A COURSE
+# ### ==========================================
+# DELETE {{base}}/Courses(code='CS501')
+
+
+# ### ==========================================
+# ### 18. READ ALL ENROLLMENTS
+# ### ==========================================
+# GET {{base}}/Enrollments
+
+
+# ### ==========================================
+# ### 19. CREATE AN ENROLLMENT
+# ### ==========================================
+# POST {{base}}/Enrollments
+# Content-Type: application/json
+
+# {
+#   "student_ID": "arjun",
+#   "course_code": "CS101"
+# }
+
+
+# ### ==========================================
+# ### 20. DELETE AN ENROLLMENT
+# ### Replace the UUID with an existing enrollment ID
+# ### ==========================================
+# DELETE {{base}}/Enrollments(ID=11111111-1111-4111-8111-000000000001)
+
+
+# ###
+
+# DELETE {{base}}/deleteStudent(ID='arjun')
+
+
+# ### =========================================
+# ### getEnrolledCourses for the student
+# ### =========================================
+# GET {{base}}/Students(ID='rahul')/StudentService.getEnrolledCourses()
+
+
+
+# ###
+# DELETE {{base}}/Students('arjun')
+
+# ###
+
+# POST {{base}}/Students('arjun')/StudentService.deleteStudent
+# Content-Type: application/json
+
+# {}
+
+
+
+@base = http://localhost:4004
+@service = {{base}}/student-service
+@studentId = arjun
+@auth = Basic c2FtZWVyOnNhbWVlcg==
+
 ### ==========================================
-### 3. READ ONE STUDENT
+### 1. METADATA
 ### ==========================================
-GET {{base}}/Students(ID='arjun')
+
+GET {{service}}/$metadata
+Authorization: {{auth}}
 
 
 ### ==========================================
-### 4. CREATE A STUDENT
+### 2. READ STUDENTS
 ### ==========================================
-POST {{base}}/Students
+
+### Get all students
+GET {{service}}/Students
+Authorization: {{auth}}
+
+### Get selected fields
+GET {{service}}/Students?$select=ID,name,email,department,status,bpNumber
+Authorization: {{auth}}
+
+### Get student by string ID
+GET {{service}}/Students('{{studentId}}')
+Authorization: {{auth}}
+
+### Filter CSE students
+GET {{service}}/Students?$filter=department eq 'CSE'
+Authorization: {{auth}}
+
+### Find admitted students
+GET {{service}}/Students?$filter=status eq 'admitted'
+Authorization: {{auth}}
+
+
+### ==========================================
+### 3. CREATE STUDENT - ODATA CRUD
+### ==========================================
+
+POST {{service}}/Students
+Authorization: {{auth}}
 Content-Type: application/json
 
 {
-  "ID": "rahul",
-  "name": "Rahul Das",
-  "email": "rahul@example.com",
+  "ID": "arjun",
+  "name": "Arjun Das",
+  "email": "arjun@example.com",
   "department": "CSE",
-  "status": "applied"
+  "status": "applied",
+  "age": 20,
+  "bpNumber": "1000000001"
 }
 
 
 ### ==========================================
-### 5. UPDATE A STUDENT
+### 4. UPDATE STUDENT - ODATA CRUD
 ### ==========================================
-PATCH {{base}}/Students(ID='rahul')
+
+PATCH {{service}}/Students('{{studentId}}')
+Authorization: {{auth}}
 Content-Type: application/json
 
 {
-  "department": "ECE"
+  "department": "ECE",
+  "status": "admitted"
 }
 
 
 ### ==========================================
-### 6. BOUND ACTION: ADMIT ONE STUDENT
+### 5. DELETE STUDENT - ODATA CRUD
 ### ==========================================
-POST {{base}}/Students(ID='arjun')/StudentService.admit
+
+DELETE {{service}}/Students('{{studentId}}')
+Authorization: {{auth}}
+
+
+### ==========================================
+### 6. READ COURSES
+### ==========================================
+
+GET {{service}}/Courses
+Authorization: {{auth}}
+
+### Get a course by code
+GET {{service}}/Courses('CAP101')
+Authorization: {{auth}}
+
+
+### ==========================================
+### 7. CREATE COURSE
+### ==========================================
+
+POST {{service}}/Courses
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "code": "CAP101",
+  "title": "SAP CAP Fundamentals",
+  "credits": 3,
+  "capacity": 100,
+  "teacher": "Sameer"
+}
+
+
+### ==========================================
+### 8. READ ENROLLMENTS
+### ==========================================
+
+GET {{service}}/Enrollments
+Authorization: {{auth}}
+
+
+### ==========================================
+### 9. BOUND ACTION: changeDepartment
+### ==========================================
+
+POST {{service}}/Students('{{studentId}}')/StudentService.changeDepartment
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "department": "MBA"
+}
+
+
+### ==========================================
+### 10. BOUND FUNCTION: getEnrolledCourses
+### ==========================================
+
+GET {{service}}/Students('{{studentId}}')/StudentService.getEnrolledCourses()
+Authorization: {{auth}}
+
+
+### ==========================================
+### 11. BOUND ACTION: graduate
+### ==========================================
+
+POST {{service}}/Students('{{studentId}}')/StudentService.graduate
+Authorization: {{auth}}
 Content-Type: application/json
 
 {}
 
 
 ### ==========================================
-### 7. BOUND ACTION: CHANGE DEPARTMENT
+### 12. BOUND ACTION: deleteStudent
 ### ==========================================
-POST {{base}}/Students(ID='arjun')/StudentService.changeDepartment
-Content-Type: application/json
 
-{
-  "department": "MEC"
-}
-
-
-### ==========================================
-### 8. BOUND FUNCTION: COUNT ENROLLMENTS
-### ==========================================
-GET {{base}}/Students(ID='arjun')/StudentService.enrollmentCount()
-
-
-### ==========================================
-### 9. UNBOUND ACTION: ADMIT ALL CSE APPLICANTS
-### ==========================================
-POST {{base}}/admitAll
-Content-Type: application/json
-
-{
-  "department": "CSE"
-}
-
-
-### ==========================================
-### 10. UNBOUND ACTION: DELETE STUDENT
-### ==========================================
-POST {{base}}/deleteStudent()
-Content-Type: application/json
-
-{
-  "ID": "rahul"
-}
-
-
-### ==========================================
-### 11. UNBOUND FUNCTION: COUNT STUDENTS
-### ==========================================
-GET {{base}}/studentCount()
-
-
-### ==========================================
-### 12. UNBOUND FUNCTION: FIND STUDENTS BY DEPARTMENT
-### ==========================================
-GET {{base}}/studentsByDepartment(department='CSE')
-
-
-### ==========================================
-### 13. STANDARD CRUD: DELETE STUDENT
-### ==========================================
-DELETE {{base}}/Students(ID='rahul')
-
-
-### ==========================================
-### 14. READ ALL COURSES
-### ==========================================
-GET {{base}}/Courses
-
-
-### ==========================================
-### 15. CREATE A COURSE
-### ==========================================
-POST {{base}}/Courses
-Content-Type: application/json
-
-{
-  "code": "CS501",
-  "title": "Advanced SAP CAP",
-  "credits": 4,
-  "capacity": 30,
-  "teacher": "Dr. Priya Nair"
-}
-
-
-### ==========================================
-### 16. UPDATE A COURSE
-### ==========================================
-PATCH {{base}}/Courses(code='CS101')
-Content-Type: application/json
-
-{
-  "capacity": 70
-}
-
-
-### ==========================================
-### 17. DELETE A COURSE
-### ==========================================
-DELETE {{base}}/Courses(code='CS501')
-
-
-### ==========================================
-### 18. READ ALL ENROLLMENTS
-### ==========================================
-GET {{base}}/Enrollments
-
-
-### ==========================================
-### 19. CREATE AN ENROLLMENT
-### ==========================================
-POST {{base}}/Enrollments
-Content-Type: application/json
-
-{
-  "student_ID": "arjun",
-  "course_code": "CS101"
-}
-
-
-### ==========================================
-### 20. DELETE AN ENROLLMENT
-### Replace the UUID with an existing enrollment ID
-### ==========================================
-DELETE {{base}}/Enrollments(ID=11111111-1111-4111-8111-000000000001)
-
-
-###
-
-DELETE {{base}}/deleteStudent(ID='arjun')
-
-
-### =========================================
-### getEnrolledCourses for the student
-### =========================================
-GET {{base}}/Students(ID='rahul')/StudentService.getEnrolledCourses()
-
-
-
-###
-DELETE {{base}}/Students('arjun')
-
-###
-
-POST {{base}}/Students('arjun')/StudentService.deleteStudent
+POST {{service}}/Students('{{studentId}}')/StudentService.deleteStudent
+Authorization: {{auth}}
 Content-Type: application/json
 
 {}
+
+
+### ==========================================
+### 13. UNBOUND FUNCTION: getTotalStudent
+### ==========================================
+
+GET {{service}}/getTotalStudent()
+Authorization: {{auth}}
+
+
+### ==========================================
+### 14. UNBOUND ACTION: admitAllCSEApplicants
+### ==========================================
+
+POST {{service}}/admitAllCSEApplicants
+Authorization: {{auth}}
+Content-Type: application/json
+
+{}
+
+
+### ==========================================
+### 15. UNBOUND ACTION: createStudent
+### ==========================================
+
+POST {{service}}/createStudent
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "name": "Priya Mishra",
+  "email": "priya@example.com",
+  "department": "CSE",
+  "status": "applied",
+  "ID": "priya",
+  "bpNumber": "1000000002"
+}
+
+
+### ==========================================
+### 16. UNBOUND ACTION: updateStudent
+### ==========================================
+
+POST {{service}}/updateStudent
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "studentId": "arjun",
+  "name": "Arjun Das",
+  "email": "arjun@example.com",
+  "department": "ECE",
+  "status": "admitted"
+}
+
