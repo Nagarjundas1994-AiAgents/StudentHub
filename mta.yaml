@@ -51,6 +51,19 @@ resources:
           credential-types:
             - "binding-secret"
             - "x509"
+        role-collections:
+          - name: 'User (StudentHub ${org}-${space})'
+            description: 'generated'
+            role-template-references:
+              - '$XSAPPNAME.User'
+          - name: 'manager (StudentHub ${org}-${space})'
+            description: 'generated'
+            role-template-references:
+              - '$XSAPPNAME.manager'
+          - name: 'admin (StudentHub ${org}-${space})'
+            description: 'generated'
+            role-template-references:
+              - '$XSAPPNAME.admin'
   - name: StudentHub-db
     type: com.sap.xs.hdi-container
     parameters:

@@ -18,6 +18,9 @@
   "cds": {
     "requires": {
       "[development]": {
+        "db": {
+          "kind": "sqlite"
+        },
         "auth": {
           "kind": "mocked",
           "users": {
@@ -46,6 +49,9 @@
         }
       },
       "[production]": {
+        "db": {
+          "kind": "hana"
+        },
         "auth": "xsuaa"
       },
       "destinations": true,

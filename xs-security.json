@@ -13,18 +13,6 @@
     {
       "name": "$XSAPPNAME.user",
       "description": "Standard user access"
-    },
-    {
-      "name": "$XSAPPNAME.User",
-      "description": "User"
-    },
-    {
-      "name": "$XSAPPNAME.manager",
-      "description": "manager"
-    },
-    {
-      "name": "$XSAPPNAME.admin",
-      "description": "admin"
     }
   ],
   "role-templates": [
@@ -46,7 +34,7 @@
       ]
     },
     {
-      "name": "user",
+      "name": "User",
       "description": "StudentHub Standard User",
       "scope-references": [
         "$XSAPPNAME.user"
