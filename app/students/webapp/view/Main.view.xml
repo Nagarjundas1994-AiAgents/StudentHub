@@ -1,0 +1,81 @@
+<mvc:View controllerName="studenthub.ui.controller.Main"
+  xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+  <Page title="StudentHub">
+    <IconTabBar expandable="false" class="sapUiResponsiveContentPadding">
+      <items>
+
+        <IconTabFilter text="Students" icon="sap-icon://group">
+          <Table id="studentTable" items="{/Students}" mode="SingleSelectLeft"
+                 selectionChange=".onSelect" growing="true" sticky="ColumnHeaders,HeaderToolbar">
+            <headerToolbar>
+              <OverflowToolbar>
+                <Title text="Students"/>
+                <ToolbarSpacer/>
+                <Text id="total" text=""/>
+                <Button text="Total" icon="sap-icon://sum" press=".onTotal"/>
+                <Button text="Admit all CSE applicants" icon="sap-icon://accept" press=".onAdmitCSE"/>
+                <Button text="Create" icon="sap-icon://add" type="Emphasized" press=".onCreate"/>
+                <Button id="btnEdit" text="Edit" icon="sap-icon://edit" enabled="false" press=".onEdit"/>
+                <Button id="btnDept" text="Change department" icon="sap-icon://offsite-work" enabled="false" press=".onChangeDept"/>
+                <Button id="btnCourses" text="Enrolled courses" icon="sap-icon://course-book" enabled="false" press=".onCourses"/>
+                <Button id="btnGrad" text="Graduate" icon="sap-icon://education" enabled="false" press=".onGraduate"/>
+                <Button id="btnDel" text="Delete" icon="sap-icon://delete" type="Reject" enabled="false" press=".onDelete"/>
+              </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+              <Column><Text text="ID"/></Column>
+              <Column><Text text="Name"/></Column>
+              <Column><Text text="Email"/></Column>
+              <Column><Text text="Department"/></Column>
+              <Column><Text text="Status"/></Column>
+              <Column><Text text="BP Number"/></Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <Text text="{ID}"/>
+                <Text text="{name}"/>
+                <Text text="{email}"/>
+                <Text text="{department}"/>
+                <ObjectStatus text="{status}" state="{= ${status} === 'admitted' ? 'Success' : 'None'}"/>
+                <Text text="{bpNumber}"/>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </IconTabFilter>
+
+        <IconTabFilter text="Courses" icon="sap-icon://course-book">
+          <Table items="{/Courses}" growing="true">
+            <columns>
+              <Column><Text text="Code"/></Column>
+              <Column><Text text="Title"/></Column>
+              <Column><Text text="Credits"/></Column>
+              <Column><Text text="Capacity"/></Column>
+              <Column><Text text="Teacher"/></Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <Text text="{code}"/><Text text="{title}"/><Text text="{credits}"/>
+                <Text text="{capacity}"/><Text text="{teacher}"/>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </IconTabFilter>
+
+        <IconTabFilter text="Enrollments" icon="sap-icon://list">
+          <Table items="{/Enrollments}" growing="true">
+            <columns>
+              <Column><Text text="Student"/></Column>
+              <Column><Text text="Course"/></Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <Text text="{student_ID}"/><Text text="{course_code}"/>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </IconTabFilter>
+
+      </items>
+    </IconTabBar>
+  </Page>
+</mvc:View>
