@@ -1,0 +1,26 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "studenthub.ui",
+    "type": "application",
+    "title": "StudentHub",
+    "applicationVersion": { "version": "1.0.0" },
+    "dataSources": {
+      "mainService": {
+        "uri": "/student-service/",
+        "type": "OData",
+        "settings": { "odataVersion": "4.0" }
+      }
+    }
+  },
+  "sap.ui5": {
+    "rootView": { "viewName": "studenthub.ui.view.Main", "type": "XML", "id": "main", "async": true },
+    "dependencies": { "minUI5Version": "1.120.0", "libs": { "sap.m": {}, "sap.ui.core": {}, "sap.ui.layout": {} } },
+    "models": {
+      "": {
+        "dataSource": "mainService",
+        "settings": { "operationMode": "Server", "autoExpandSelect": true, "earlyRequests": true }
+      }
+    }
+  }
+}
