@@ -1,4 +1,3 @@
-
 {
   "xsappname": "StudentHub",
   "tenant-mode": "dedicated",
@@ -14,6 +13,18 @@
     {
       "name": "$XSAPPNAME.user",
       "description": "Standard user access"
+    },
+    {
+      "name": "$XSAPPNAME.User",
+      "description": "User"
+    },
+    {
+      "name": "$XSAPPNAME.manager",
+      "description": "manager"
+    },
+    {
+      "name": "$XSAPPNAME.admin",
+      "description": "admin"
     }
   ],
   "role-templates": [
@@ -42,5 +53,6 @@
       ]
     }
   ],
-  "authorities-inheritance": false
+  "authorities-inheritance": false,
+  "attributes": []
 }

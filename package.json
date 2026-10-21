@@ -1,4 +1,3 @@
-
 {
   "name": "StudentHub",
   "version": "1.0.0",
@@ -24,15 +23,24 @@
           "users": {
             "sameer": {
               "password": "sameer",
-              "roles": ["admin", "user"]
+              "roles": [
+                "admin",
+                "user"
+              ]
             },
             "Nagarjun": {
               "password": "nagarjun",
-              "roles": ["admin", "user"]
+              "roles": [
+                "admin",
+                "user"
+              ]
             },
             "sukriti": {
               "password": "sukriti",
-              "roles": ["user", "manager"]
+              "roles": [
+                "user",
+                "manager"
+              ]
             }
           }
         }
