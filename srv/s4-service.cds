@@ -19,7 +19,12 @@ service S4BusinessPartnerService {
         CreatedByUser,
         CreationDate,
         Industry
-  };
+  }
+    actions {
+
+      //bound function: all addresses of this business partner
+      function getAddresses() returns array of BusinessPartnerAddresses;
+    };
 
   @readonly
   entity BusinessPartnerAddresses as projection on external.A_BusinessPartnerAddress {
@@ -54,13 +59,27 @@ service S4BusinessPartnerService {
         CreationDate
   };
 
+  //total number of business partners in S/4HANA
+  function getBusinessPartnerCount()                          returns Integer;
+
+  //business partners whose full name contains `name` (top: default 10, max 100)
+  function searchBusinessPartners(name: String, top: Integer) returns array of BusinessPartners;
+
+  //the S/4HANA business partner linked to a local student (Students.bpNumber)
+  function getStudentBusinessPartner(studentID: String)      returns BusinessPartners;
+
   /**
    * Customers per country, aggregated server-side.
-   * Pages BusinessPartnerAddresses sequentially (sandbox-safe) and counts
-   * addresses whose BusinessPartner is a Customer. Returns compact JSON:
-   * `{ countries: [{ country, customers }], totalCustomers, scanned, truncated }`.
+   * Pages customer BusinessPartners sequentially (sandbox-safe) with their
+   * addresses expanded, counting each customer once per country. Returns compact JSON:
+   * `{ countries: [{ country, customers }], totalCustomers, truncated }`.
    * Use this instead of GROUP BY (unsupported) or one query per country.
    * @param top max countries returned, sorted descending (default 20, max 100)
    */
-  action customerCountByCountry(top: Integer) returns String;
+  action   customerCountByCountry(top: Integer)               returns String;
+
+  //link a local student to an S/4HANA business partner, after checking it exists there
+  @requires: ['admin', 'manager']
+  action   linkStudentToBusinessPartner(studentID: String,
+                                        bpNumber: String)     returns BusinessPartners;
 }
