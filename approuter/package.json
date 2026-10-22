@@ -2,15 +2,13 @@
     "name": "studenthub-approuter",
     "version": "1.0.0",
     "description": "StudentHub Application Router",
-    "main": "node.js",
     "scripts": {
-        "start": "node node_modules/@sap/approuter/approuter.js"
+        "start": "node node_modules/@sap/approuter/approuter.js",
+        "copy-ui": "node -e \"require('fs').cpSync('../app/students/webapp','resources/students',{recursive:true})\"",
+        "dev": "npm run copy-ui && node local.js"
     },
     "dependencies": {
         "@sap/approuter": "^10.0.0"
-    },
-    "devDependencies": {
-        "@sap/cds-dk": "^10.0.0"
     },
     "private": true
 }

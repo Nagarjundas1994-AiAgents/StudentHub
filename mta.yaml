@@ -4,7 +4,6 @@ version: 1.0.0
 description: "A simple CAP project."
 parameters:
   enable-parallel-deployments: true
-  deploy_mode: html5-repo
 build-parameters:
   before-all:
     - builder: custom
@@ -37,6 +36,32 @@ modules:
     requires:
       - name: StudentHub-db
 
+  - name: StudentHub-approuter
+    type: approuter.nodejs
+    path: approuter
+    provides:
+      - name: app-api
+        properties:
+          app-uri: ${default-uri}
+    parameters:
+      memory: 256M
+      disk-quota: 512M
+      keep-existing-routes: true
+    build-parameters:
+      builder: custom
+      commands:
+        - npm run copy-ui
+      ignore:
+        - node_modules/
+    requires:
+      - name: StudentHub-auth
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api
+          url: ~{srv-url}
+          forwardAuthToken: true
+
 resources:
   - name: StudentHub-auth
     type: org.cloudfoundry.managed-service
@@ -51,6 +76,8 @@ resources:
           credential-types:
             - "binding-secret"
             - "x509"
+          redirect-uris:
+            - https://~{app-api/app-uri}/**
         role-collections:
           - name: 'User (StudentHub ${org}-${space})'
             description: 'generated'
@@ -64,6 +91,8 @@ resources:
             description: 'generated'
             role-template-references:
               - '$XSAPPNAME.admin'
+    requires:
+      - name: app-api
   - name: StudentHub-db
     type: com.sap.xs.hdi-container
     parameters:
@@ -74,9 +103,3 @@ resources:
     parameters:
       service: destination
       service-plan: lite
-
-  - name: StudentHub-html5-repo-host
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: html5-apps-repo
-      service-plan: app-host

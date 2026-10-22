@@ -10,10 +10,15 @@ entity Students : managed {
   key ID          : String(20);
       name        : String(100)  @mandatory;
       email       : String(120)  @mandatory  @assert.format: '^[^@\s]+@[^@\s]+\.[^@\s]+$';
-      department  : String(3); // CSE, ECE or MBA
-      status      : String(10) enum {
+      department  : String(3) @assert.range enum {
+        CSE;
+        ECE;
+        MBA;
+      };
+      status      : String(10) @assert.range enum {
         applied;
         admitted;
+        graduated;
       } default 'applied';
       bpNumber    : String(10); // business partner number in SAP S/4HANA
       enrollments : Composition of many Enrollments

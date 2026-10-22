@@ -44,15 +44,13 @@ export default class StudentService extends cds.ApplicationService {
             // Check if the student exists
             const student = await SELECT.one.from(Students).where({ ID });
             if (!student) {
-                req.error(404, `Student with ID ${ID} not found`);
+                return req.reject(404, `Student with ID ${ID} not found`);
             }
 
-            // Update the department of the student
-            await UPDATE(Students).set({ department: newDepartment }).where({ ID });
+            // Update the department of the student (via the service, so @assert.range applies)
+            await this.run(UPDATE(Students).set({ department: newDepartment }).where({ ID }));
 
-            console.log(`Student with ID ${ID} has been updated to department ${newDepartment}`);
-
-            return { message: `Student with ID ${ID} has been updated to department ${newDepartment}` };
+            return SELECT.one.from(Students).where({ ID });
 
         });
 
@@ -65,7 +63,7 @@ export default class StudentService extends cds.ApplicationService {
             // Check if the student exists
             const student = await SELECT.one.from(Students).where({ ID: studentID });
             if (!student) {
-                req.error(404, `Student with ID ${studentID} not found`);
+                return req.reject(404, `Student with ID ${studentID} not found`);
             }
 
             // Fetch the enrolled courses for the student
@@ -105,43 +103,60 @@ export default class StudentService extends cds.ApplicationService {
         });
 
         // =====================================
+        // BOUND ACTION: Graduate a student
+        // =====================================
+        this.on('graduate', 'Students', async (req) => {
+            const ID = req.params[0].ID;
+
+            const updated = await UPDATE(Students).set({ status: 'graduated' }).where({ ID });
+            if (!updated) {
+                return req.reject(404, `Student ${ID} not found`);
+            }
+
+            return SELECT.one.from(Students).where({ ID });
+        });
+
+        // =====================================
         // 5. UNBOUND ACTION: Admit all CSE applicants
         // =====================================
         this.on('admitAllCSEApplicants', async (req) => {
-            const cseApplicants = await SELECT.from(Students).where({ department: 'CSE' });
+            const where = { department: 'CSE', status: 'applied' };
+            const cseApplicants = await SELECT.from(Students).columns('ID').where(where);
 
             if (cseApplicants.length === 0) {
                 return [];
             }
 
-            const admittedStudents = await INSERT.into(Students).entries(cseApplicants);
+            await UPDATE(Students).set({ status: 'admitted' }).where(where);
 
-            return admittedStudents;
+            return SELECT.from(Students).where({ ID: cseApplicants.map(s => s.ID) });
         });
 
         // =====================================
         // 6. UNBOUND ACTION: Create a student
         // =====================================
         this.on('createStudent', async (req) => {
-            const { name, email, department, status,ID,bpNumber} = req.data;
+            const { ID, ...fields } = req.data;
 
-            const newStudent = await INSERT.into(Students).entries({
-                name,
-                email,
-                department,
-                status, 
-                ID, 
-                bpNumber
-            });
+            if (!ID?.trim()) {
+                return req.reject(400, 'ID is required');
+            }
 
-            return newStudent;
+            if (await SELECT.one.from(Students).columns('ID').where({ ID })) {
+                return req.reject(409, `Student ${ID} already exists`);
+            }
+
+            // via the service, so @mandatory / @assert and the before-CREATE check run
+            await this.run(INSERT.into(Students).entries({ ID, ...sent(fields) }));
+
+            return SELECT.one.from(Students).where({ ID });
         });
 
         // =====================================
         // 7. UNBOUND ACTION: Update a student
         // =====================================
         this.on('updateStudent', async (req) => {
-            const { ID, name, email, department, status } = req.data;
+            const { ID, ...fields } = req.data;
 
             const student = await SELECT.one.from(Students).where({ ID });
 
@@ -149,19 +164,18 @@ export default class StudentService extends cds.ApplicationService {
                 return req.reject(404, `Student ${ID} not found`);
             }
 
-            await UPDATE(Students).set({
-                name,
-                email,
-                department,
-                status
-            }).where({ ID });
+            // only the fields the caller sent; omitted ones keep their value
+            const data = sent(fields);
+            if (Object.keys(data).length) {
+                await this.run(UPDATE(Students).set(data).where({ ID }));
+            }
 
-            return { message: `Student with ID ${ID} has been updated` };
+            return SELECT.one.from(Students).where({ ID });
         });
-
-
-
 
         return super.init();
     }
 }
+
+// ponytail: null counts as "not sent", so a field can't be cleared through these actions
+const sent = (data) => Object.fromEntries(Object.entries(data).filter(([, v]) => v != null));

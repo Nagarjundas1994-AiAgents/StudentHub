@@ -8,18 +8,23 @@
     "@sap/xssec": "^4"
   },
   "devDependencies": {
+    "@cap-js/cds-test": "^1.0.2",
     "@cap-js/sqlite": "^3",
     "@sap/cds-dk": "^10"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "test": "node --test"
   },
   "private": true,
   "cds": {
     "requires": {
       "[development]": {
         "db": {
-          "kind": "sqlite"
+          "kind": "sqlite",
+          "credentials": {
+            "url": ":memory:"
+          }
         },
         "auth": {
           "kind": "mocked",
@@ -54,8 +59,7 @@
         },
         "auth": "xsuaa"
       },
-      "destinations": true,
-      "html5-repo": true
+      "destinations": true
     }
   }
 }

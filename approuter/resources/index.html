@@ -473,9 +473,13 @@
         </p>
 
         <div class="actions">
-          <button class="button button-primary" id="testConnection">
+          <button class="button button-secondary" id="testConnection">
             Test CAP Connection ↗
           </button>
+
+          <a class="button button-primary" href="/students/index.html">
+            Open StudentHub App →
+          </a>
 
           <a class="button button-secondary" href="#architecture">
             Explore Architecture ↓
@@ -592,7 +596,7 @@
       </p>
 
       <div class="endpoint" id="endpoint">
-        /odata/v4/StudentService/Students
+        /student-service/Students
       </div>
 
       <button class="button button-primary" id="loadStudents">
@@ -634,7 +638,7 @@
   </footer>
 
   <script>
-    const endpoint = "/odata/v4/StudentService/Students";
+    const endpoint = "/student-service/Students";
     const output = document.getElementById("output");
 
     document.getElementById("endpoint").textContent = endpoint;

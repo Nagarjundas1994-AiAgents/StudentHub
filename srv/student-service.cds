@@ -1,7 +1,38 @@
 using {studenthub as db} from '../db/schema';
 
-//@requires: 'admin'
-service StudentService @(path: '/student-service') {
+// roles: admin, manager, user (xs-security.json scopes; mocked users in package.json)
+service StudentService @(
+  path    : '/student-service',
+  requires: 'user'
+) {
+  @restrict: [
+    {
+      grant: [
+        'READ',
+        'getEnrolledCourses'
+      ],
+      to   : 'user'
+    },
+    {
+      grant: [
+        'CREATE',
+        'UPDATE',
+        'changeDepartment',
+        'graduate'
+      ],
+      to   : [
+        'admin',
+        'manager'
+      ]
+    },
+    {
+      grant: [
+        'DELETE',
+        'deleteStudent'
+      ],
+      to   : 'admin'
+    }
+  ]
   entity Students    as projection on db.Students
     actions {
 
@@ -21,26 +52,28 @@ service StudentService @(path: '/student-service') {
   @restrict: [
     {
       grant: 'READ',
-      to   : ['User']
+      to   : 'user'
     },
     {
-      grant: [
-        'CREATE',
-        'UPDATE'
-      ],
+      grant: '*',
+      to   : 'admin'
+    }
+  ]
+  entity Courses     as projection on db.Courses;
+
+  @restrict: [
+    {
+      grant: 'READ',
+      to   : 'user'
+    },
+    {
+      grant: '*',
       to   : [
         'admin',
         'manager'
       ]
-    },
-    {
-      grant: 'DELETE',
-      to   : 'admin'
     }
   ]
-
-  entity Courses     as projection on db.Courses;
-
   entity Enrollments as projection on db.Enrollments;
 
 
@@ -48,10 +81,11 @@ service StudentService @(path: '/student-service') {
   function getTotalStudent()             returns Integer;
 
   //UNBOUND ACTION: ADMIT ALL CSE APPLICANTS
-
+  @requires: ['admin', 'manager']
   action   admitAllCSEApplicants()       returns array of Students;
 
   //CREATE A STUDENT
+  @requires: ['admin', 'manager']
   action   createStudent(name: String,
                          email: String,
                          department: String,
@@ -61,25 +95,8 @@ service StudentService @(path: '/student-service') {
 
 
   //UNBOUND ACTION: Update a student
-  @restrict: [
-    {
-      grant: 'READ',
-      to   : ['User']
-    },
-    {
-      grant: [
-        'CREATE',
-        'UPDATE'
-      ],
-      to   : ['manager']
-    },
-    {
-      grant: 'DELETE',
-      to   : 'admin'
-    }
-  ]
-  action   updateStudent(studentId: Integer,
-                         name: String,
+  @requires: ['admin', 'manager']
+  action   updateStudent(name: String,
                          email: String,
                          department: String,
                          status: String,

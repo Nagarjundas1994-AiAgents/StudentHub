@@ -14,7 +14,7 @@
       </Select>
       <Label text="Status"/>
       <Select selectedKey="{form>/status}">
-        <core:Item key="applied" text="applied"/><core:Item key="admitted" text="admitted"/>
+        <core:Item key="applied" text="applied"/><core:Item key="admitted" text="admitted"/><core:Item key="graduated" text="graduated"/>
       </Select>
       <Label text="BP Number"/>
       <Input value="{form>/bpNumber}" maxLength="10"/>
