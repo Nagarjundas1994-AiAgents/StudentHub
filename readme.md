@@ -34,7 +34,7 @@ On Cloud Foundry (`mbt build && cf deploy mta_archives/*.mtar`) the same `xs-app
 ## Tests
 
 `npm test` runs [test/student-service.test.js](test/student-service.test.js) (authorization, input validation, actions).
-Demo data lives in `test/data/`, so it loads locally and in tests but is never deployed to HANA.
+Courses (`db/data/`) are deployed to HANA as master data; demo Students/Enrollments (`test/data/`) load only locally and in tests.
 
 ## Deploy to SAP BTP (Cloud Foundry)
 
