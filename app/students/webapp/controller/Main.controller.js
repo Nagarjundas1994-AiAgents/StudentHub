@@ -40,6 +40,9 @@ sap.ui.define([
       return op.getBoundContext().getObject();
     },
 
+    // back to the approuter landing page
+    onHome() { window.location.href = "/"; },
+
     // approuter logout endpoint (xs-app.json), ends the XSUAA session
     onLogout() { window.location.replace("/do/logout"); },
 
