@@ -1,7 +1,7 @@
 using {API_BUSINESS_PARTNER as external} from './external/API_BUSINESS_PARTNER';
 
 @odata.draft.enabled
-service S4BusinessPartnerService {
+service S4BusinessPartnerService @(requires: 'user') {
 
   @readonly
   entity BusinessPartners as projection on external.A_BusinessPartner {

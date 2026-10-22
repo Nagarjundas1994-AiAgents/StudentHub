@@ -14,6 +14,13 @@
       "csrfProtection": true
     },
     {
+      "source": "^/odata/v4/s4-business-partner/(.*)$",
+      "target": "/odata/v4/s4-business-partner/$1",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa",
+      "csrfProtection": true
+    },
+    {
       "source": "^/students/(.*)$",
       "target": "$1",
       "localDir": "resources/students",

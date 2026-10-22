@@ -23,6 +23,8 @@
                   <Button id="btnDept" text="Change department" icon="sap-icon://offsite-work" enabled="false" press=".onChangeDept"/>
                   <Button id="btnCourses" text="Enrolled courses" icon="sap-icon://course-book" enabled="false" press=".onCourses"/>
                   <Button id="btnGrad" text="Graduate" icon="sap-icon://education" enabled="false" press=".onGraduate"/>
+                  <Button id="btnBP" text="Business partner" icon="sap-icon://customer" enabled="false" press=".onStudentBP"/>
+                  <Button id="btnLink" text="Link BP" icon="sap-icon://chain-link" enabled="false" press=".onLinkBP"/>
                   <Button id="btnDel" text="Delete" icon="sap-icon://delete" type="Reject" enabled="false" press=".onDelete"/>
                 </OverflowToolbar>
               </headerToolbar>
@@ -74,6 +76,42 @@
               <items>
                 <ColumnListItem>
                   <Text text="{student_ID}"/><Text text="{course_code}"/>
+                </ColumnListItem>
+              </items>
+            </Table>
+          </IconTabFilter>
+
+          <!-- live data from SAP S/4HANA (S4BusinessPartnerService) -->
+          <IconTabFilter text="Business Partners" icon="sap-icon://customer">
+            <Table id="bpTable" items="{s4>/BusinessPartners}" mode="SingleSelectLeft"
+                   selectionChange=".onSelectBP" growing="true" sticky="ColumnHeaders,HeaderToolbar">
+              <headerToolbar>
+                <OverflowToolbar>
+                  <Title text="S/4HANA Business Partners"/>
+                  <ToolbarSpacer/>
+                  <SearchField width="14rem" placeholder="Search by name" search=".onSearchBP"/>
+                  <Text id="bpTotal" text=""/>
+                  <Button text="Count" icon="sap-icon://sum" press=".onCountBP"/>
+                  <Button text="Customers by country" icon="sap-icon://world" press=".onCustomersByCountry"/>
+                  <Button id="btnAddr" text="Addresses" icon="sap-icon://addresses" enabled="false" press=".onAddresses"/>
+                </OverflowToolbar>
+              </headerToolbar>
+              <columns>
+                <Column><Text text="BP Number"/></Column>
+                <Column><Text text="Name"/></Column>
+                <Column><Text text="Category"/></Column>
+                <Column><Text text="Customer"/></Column>
+                <Column><Text text="Supplier"/></Column>
+                <Column><Text text="Created on"/></Column>
+              </columns>
+              <items>
+                <ColumnListItem>
+                  <Text text="{s4>BusinessPartner}"/>
+                  <Text text="{s4>BusinessPartnerFullName}"/>
+                  <Text text="{= ${s4>BusinessPartnerCategory} === '1' ? 'Person' : ${s4>BusinessPartnerCategory} === '2' ? 'Organization' : 'Group'}"/>
+                  <Text text="{s4>Customer}"/>
+                  <Text text="{s4>Supplier}"/>
+                  <Text text="{s4>CreationDate}"/>
                 </ColumnListItem>
               </items>
             </Table>

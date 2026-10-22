@@ -10,6 +10,11 @@
         "uri": "/student-service/",
         "type": "OData",
         "settings": { "odataVersion": "4.0" }
+      },
+      "s4Service": {
+        "uri": "/odata/v4/s4-business-partner/",
+        "type": "OData",
+        "settings": { "odataVersion": "4.0" }
       }
     }
   },
@@ -20,6 +25,10 @@
       "": {
         "dataSource": "mainService",
         "settings": { "operationMode": "Server", "autoExpandSelect": true, "earlyRequests": true }
+      },
+      "s4": {
+        "dataSource": "s4Service",
+        "settings": { "operationMode": "Server", "autoExpandSelect": true }
       }
     }
   }

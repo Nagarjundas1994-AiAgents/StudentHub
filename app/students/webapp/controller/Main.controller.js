@@ -11,7 +11,9 @@ sap.ui.define([
   "sap/m/StandardListItem"
 ], (Controller, Fragment, JSONModel, MessageBox, MessageToast, Dialog, Button, Input, List, StandardListItem) => {
   "use strict";
-  const NS = "StudentService.";
+  // namespace for bound operations, per model ("" = StudentService, "s4" = S4BusinessPartnerService)
+  const NS = { "": "StudentService.", s4: "S4BusinessPartnerService." };
+  const BP_CATEGORY = { 1: "Person", 2: "Organization", 3: "Group" };
 
   return Controller.extend("studenthub.ui.controller.Main", {
 
@@ -30,14 +32,48 @@ sap.ui.define([
     _err(e) { MessageBox.error(e.message || String(e)); },
 
     // Calls an OData V4 action/function. ctx given => bound, otherwise unbound.
-    async _call(name, params = {}, ctx) {
-      const model = this.getView().getModel();
+    async _call(name, params = {}, ctx, modelName = "") {
+      const model = this.getView().getModel(modelName || undefined);
       const op = ctx
-        ? model.bindContext(NS + name + "(...)", ctx)
+        ? model.bindContext(NS[modelName] + name + "(...)", ctx)
         : model.bindContext("/" + name + "(...)");
       Object.entries(params).forEach(([k, v]) => v !== undefined && v !== "" && op.setParameter(k, v));
       await op.execute();
       return op.getBoundContext().getObject();
+    },
+
+    // read-only list in a dialog; items are { title, description, info }
+    _listDialog(title, items, noDataText) {
+      const dlg = new Dialog({
+        title, contentWidth: "28rem",
+        content: [new List({ noDataText, items: items.map(i => new StandardListItem(i)) })],
+        endButton: new Button({ text: "Close", press: () => dlg.close() }),
+        afterClose: () => dlg.destroy()
+      });
+      dlg.open();
+    },
+
+    // single-input dialog; onApply(value) returns a promise, the dialog closes when it resolves
+    _prompt(title, input, onApply) {
+      const dlg = new Dialog({
+        title, content: [input],
+        beginButton: new Button({
+          text: "Apply", type: "Emphasized",
+          press: async () => {
+            try {
+              await onApply(input.getValue().trim());
+              dlg.close();
+            } catch (e) { this._err(e); }
+          }
+        }),
+        endButton: new Button({ text: "Cancel", press: () => dlg.close() }),
+        afterClose: () => dlg.destroy()
+      });
+      dlg.addStyleClass("sapUiContentPadding").open();
+    },
+
+    _bpItem(bp) {
+      return { title: bp.BusinessPartnerFullName, description: bp.BusinessPartner, info: BP_CATEGORY[bp.BusinessPartnerCategory] };
     },
 
     // back to the approuter landing page
@@ -48,7 +84,7 @@ sap.ui.define([
 
     onSelect() {
       const on = !!this._ctx();
-      ["btnEdit", "btnDept", "btnCourses", "btnGrad", "btnDel"].forEach(id => this.byId(id).setEnabled(on));
+      ["btnEdit", "btnDept", "btnCourses", "btnGrad", "btnBP", "btnLink", "btnDel"].forEach(id => this.byId(id).setEnabled(on));
     },
 
     // ---------- unbound function: getTotalStudent ----------
@@ -101,24 +137,11 @@ sap.ui.define([
     // ---------- bound action: changeDepartment ----------
     onChangeDept() {
       const ctx = this._ctx();
-      const input = new Input({ placeholder: "CSE, ECE or MBA", maxLength: 3 });
-      const dlg = new Dialog({
-        title: "Change department", content: [input],
-        beginButton: new Button({
-          text: "Apply", type: "Emphasized",
-          press: async () => {
-            try {
-              await this._call("changeDepartment", { department: input.getValue().toUpperCase() }, ctx);
-              MessageToast.show("Department changed");
-              dlg.close();
-              this._refresh();
-            } catch (e) { this._err(e); }
-          }
-        }),
-        endButton: new Button({ text: "Cancel", press: () => dlg.close() }),
-        afterClose: () => dlg.destroy()
+      this._prompt("Change department", new Input({ placeholder: "CSE, ECE or MBA", maxLength: 3 }), async (v) => {
+        await this._call("changeDepartment", { department: v.toUpperCase() }, ctx);
+        MessageToast.show("Department changed");
+        this._refresh();
       });
-      dlg.addStyleClass("sapUiContentPadding").open();
     },
 
     // ---------- bound function: getEnrolledCourses ----------
@@ -126,16 +149,76 @@ sap.ui.define([
       const ctx = this._ctx();
       try {
         const r = await this._call("getEnrolledCourses", {}, ctx);
-        const dlg = new Dialog({
-          title: `Courses of ${ctx.getProperty("name")}`,
-          content: [new List({
-            noDataText: "Not enrolled in any course",
-            items: r.value.map(c => new StandardListItem({ title: c.title, description: c.code, info: c.teacher }))
-          })],
-          endButton: new Button({ text: "Close", press: () => dlg.close() }),
-          afterClose: () => dlg.destroy()
-        });
-        dlg.open();
+        this._listDialog(`Courses of ${ctx.getProperty("name")}`,
+          r.value.map(c => ({ title: c.title, description: c.code, info: c.teacher })),
+          "Not enrolled in any course");
+      } catch (e) { this._err(e); }
+    },
+
+    // ---------- S/4HANA function: getStudentBusinessPartner ----------
+    async onStudentBP() {
+      const s = this._ctx().getObject();
+      try {
+        const bp = await this._call("getStudentBusinessPartner", { studentID: s.ID }, null, "s4");
+        this._listDialog(`Business partner of ${s.name}`, [this._bpItem(bp)]);
+      } catch (e) { this._err(e); }
+    },
+
+    // ---------- S/4HANA action: linkStudentToBusinessPartner ----------
+    onLinkBP() {
+      const s = this._ctx().getObject();
+      const input = new Input({ value: s.bpNumber, placeholder: "S/4HANA BP number, e.g. 202", maxLength: 10 });
+      this._prompt(`Link ${s.name} to a business partner`, input, async (bpNumber) => {
+        const bp = await this._call("linkStudentToBusinessPartner", { studentID: s.ID, bpNumber }, null, "s4");
+        MessageToast.show(`Linked to ${bp.BusinessPartnerFullName}`);
+        this._refresh();
+      });
+    },
+
+    // ---------- S/4HANA tab ----------
+    onSelectBP() {
+      this.byId("btnAddr").setEnabled(!!this.byId("bpTable").getSelectedItem());
+    },
+
+    // function: getBusinessPartnerCount
+    async onCountBP() {
+      try {
+        const r = await this._call("getBusinessPartnerCount", {}, null, "s4");
+        this.byId("bpTotal").setText("Total: " + r.value);
+      } catch (e) { this._err(e); }
+    },
+
+    // function: searchBusinessPartners
+    async onSearchBP(e) {
+      const name = e.getParameter("query")?.trim();
+      if (!name) return;
+      try {
+        const r = await this._call("searchBusinessPartners", { name, top: 50 }, null, "s4");
+        this._listDialog(`Business partners matching "${name}"`, r.value.map(bp => this._bpItem(bp)), "No business partner found");
+      } catch (err) { this._err(err); }
+    },
+
+    // action: customerCountByCountry (returns a JSON string)
+    async onCustomersByCountry() {
+      try {
+        const r = await this._call("customerCountByCountry", { top: 20 }, null, "s4");
+        const { countries, totalCustomers, truncated } = JSON.parse(r.value);
+        this._listDialog(`Customers by country (${totalCustomers}${truncated ? "+" : ""} customers)`,
+          countries.map(c => ({ title: c.country, info: `${c.customers} customer${c.customers === 1 ? "" : "s"}` })), "No customers");
+      } catch (e) { this._err(e); }
+    },
+
+    // bound function: getAddresses
+    async onAddresses() {
+      const ctx = this.byId("bpTable").getSelectedItem().getBindingContext("s4");
+      try {
+        const r = await this._call("getAddresses", {}, ctx, "s4");
+        this._listDialog(`Addresses of ${ctx.getProperty("BusinessPartnerFullName")}`,
+          r.value.map(a => ({
+            title: [a.StreetName, a.HouseNumber].filter(Boolean).join(" ") || "(no street)",
+            description: [a.PostalCode, a.CityName, a.Region].filter(Boolean).join(" "),
+            info: a.Country
+          })), "No addresses");
       } catch (e) { this._err(e); }
     },
 
