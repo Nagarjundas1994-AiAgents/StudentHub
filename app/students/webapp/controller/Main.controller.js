@@ -40,6 +40,9 @@ sap.ui.define([
       return op.getBoundContext().getObject();
     },
 
+    // approuter logout endpoint (xs-app.json), ends the XSUAA session
+    onLogout() { window.location.replace("/do/logout"); },
+
     onSelect() {
       const on = !!this._ctx();
       ["btnEdit", "btnDept", "btnCourses", "btnGrad", "btnDel"].forEach(id => this.byId(id).setEnabled(on));

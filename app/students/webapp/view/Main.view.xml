@@ -1,6 +1,9 @@
 <mvc:View controllerName="studenthub.ui.controller.Main"
   xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
   <Page title="StudentHub">
+    <headerContent>
+      <Button text="Log out" icon="sap-icon://log" press=".onLogout"/>
+    </headerContent>
     <IconTabBar expandable="false" class="sapUiResponsiveContentPadding">
       <items>
 
@@ -36,7 +39,7 @@
                 <Text text="{name}"/>
                 <Text text="{email}"/>
                 <Text text="{department}"/>
-                <ObjectStatus text="{status}" state="{= ${status} === 'admitted' ? 'Success' : 'None'}"/>
+                <ObjectStatus text="{status}" state="{= ${status} === 'admitted' ? 'Success' : ${status} === 'graduated' ? 'Information' : 'None'}"/>
                 <Text text="{bpNumber}"/>
               </ColumnListItem>
             </items>
