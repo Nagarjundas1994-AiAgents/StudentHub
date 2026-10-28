@@ -1,0 +1,172 @@
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:25:48.745872] Updated app with guid 5ef15360-4307-4c9d-92bf-c734e980357d ({"lifecycle"=>{"data"=>{"buildpacks"=>["nodejs_buildpack"]}, "type"=>"buildpack"}}) (STDOUT, API)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:25:48.837464] Updating process: "web" (STDOUT, API)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:18.787839] Uploading app package for app with guid 5ef15360-4307-4c9d-92bf-c734e980357d (STDOUT, API)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:18.973144] Updated app with guid 5ef15360-4307-4c9d-92bf-c734e980357d ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"}) (STDOUT, API)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:29.158785] Creating build for app with guid 5ef15360-4307-4c9d-92bf-c734e980357d (STDOUT, API)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:29.671988] Downloading nodejs_buildpack... (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:29.720692] Downloaded nodejs_buildpack (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:29.720821] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 creating container for instance 6e573c19-bea7-48b2-bde9-1b48e339a7f1 (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:30.847927] Security group rules were updated (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:30.962010] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully created container for instance 6e573c19-bea7-48b2-bde9-1b48e339a7f1 (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:31.865459] Downloading app package... (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:31.865944] Downloading build artifacts cache... (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:31.969111] Downloaded build artifacts cache (223B) (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:33.178968] Downloaded app package (6.2M) (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:33.361738] -----> Nodejs Buildpack version 1.9.6 (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:33.361872] [31;1m**WARNING**[0m buildpack version changed from 1.9.4 to 1.9.6 (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:33.672818] -----> Bootstrapping python (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:33.672851] -----> Installing python 3.13.17 (STDOUT, STG)#
+#2026 10 26 14:26:38.922#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-382#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:33.672861] Copy [/tmp/buildpacks/00d125328f265a57/dependencies/6ffc15ed08f7a086278d2a86f21b1fdb/python_3.13.17_linux_x64_cflinuxfs4_c9ed5e8d.tgz] (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:39.455147] -----> Installing binaries (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:39.455183] engines.node (package.json): ^24 (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:39.455203] engines.npm (package.json): unspecified (use default) (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:39.455206] -----> Installing node 24.22.1 (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:39.455215] Copy [/tmp/buildpacks/00d125328f265a57/dependencies/81943ffafa7adf07ff6ffc6aaa402b41/node_24.22.1_linux_x64_cflinuxfs4_e062d949.tgz] (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:43.608915] Using default npm version: 11.19.1 (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:43.608943] -----> Installing yarn 1.22.22 (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:43.609015] Copy [/tmp/buildpacks/00d125328f265a57/dependencies/e4fe26756e9984a665478d350474fa2e/yarn_1.22.22_linux_noarch_any-stack_b6132b86.tgz] (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.101066] Installed yarn 1.22.22 (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.101107] -----> Creating runtime environment (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.189886] NODE_ENV=production (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.189919] NODE_HOME=/tmp/contents2910215883/deps/0/node (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.189924] NODE_MODULES_CACHE=true (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.189928] NODE_VERBOSE=false (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.189934] NPM_CONFIG_LOGLEVEL=error (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.189938] NPM_CONFIG_PRODUCTION=true (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.190885] -----> Building dependencies (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.190917] Prebuild detected (node_modules already exists) (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:44.190939] Rebuilding any native modules (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:45.037184] rebuilt dependencies successfully (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:45.039677] npm notice (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:45.039708] npm notice New major version of npm available! 11.19.1 -> 12.2.1 (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:45.039712] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1 (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:45.039716] npm notice To update run: npm install -g npm@12.2.1 (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:45.039720] npm notice (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:45.130842] Installing any new modules (package.json + package-lock.json) (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:46.046714] up to date in 825ms (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:46.046997] 35 packages are looking for funding (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:46.047126] run `npm fund` for details (STDOUT, STG)#
+#2026 10 26 14:26:48.915#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-408#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:26:47.091985] Contrast Security no credentials found. Will not write environment files. (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:01.180054] Exit status 0 (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:01.180130] Uploading droplet, build artifacts cache... (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:01.180272] Uploading droplet... (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:01.180655] Uploading build artifacts cache... (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:01.207088] Uploaded build artifacts cache (227B) (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:02.164681] Creating droplet for app with guid 5ef15360-4307-4c9d-92bf-c734e980357d (STDOUT, API)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:04.236930] Uploaded droplet (63.1M) (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:04.267689] Uploading complete (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:04.671036] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 stopping instance 6e573c19-bea7-48b2-bde9-1b48e339a7f1 (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:04.671079] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 destroying container for instance 6e573c19-bea7-48b2-bde9-1b48e339a7f1 (STDOUT, STG)#
+#2026 10 26 14:27:09.734#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-357#
+[PollStageAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:04.725959] Staging complete for build 6e573c19-bea7-48b2-bde9-1b48e339a7f1 (STDOUT, API)#
+#2026 10 26 14:27:19.566#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-440#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:09.834764] Updated app with guid 5ef15360-4307-4c9d-92bf-c734e980357d ({:droplet_guid=>"cfd1970b-e711-47ff-8cfc-619476c5aedf"}) (STDOUT, API)#
+#2026 10 26 14:27:19.566#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-440#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:10.104457] Creating revision for app with guid 5ef15360-4307-4c9d-92bf-c734e980357d (STDOUT, API)#
+#2026 10 26 14:27:19.566#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-440#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:10.146324] Starting app with guid 5ef15360-4307-4c9d-92bf-c734e980357d (STDOUT, API)#
+#2026 10 26 14:27:19.566#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-440#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:10.352922] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully destroyed container for instance 6e573c19-bea7-48b2-bde9-1b48e339a7f1 (STDOUT, STG)#
+#2026 10 26 14:27:19.566#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-440#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:10.399949] Cell c839c7b1-088e-41af-b9b7-66256aacd457 creating container for instance 84f901bc-72ef-45cb-428f-47d0 (STDOUT, CELL)#
+#2026 10 26 14:27:19.566#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-440#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:11.668505] Security group rules were updated (STDOUT, CELL)#
+#2026 10 26 14:27:19.566#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-440#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:11.734937] Cell c839c7b1-088e-41af-b9b7-66256aacd457 successfully created container for instance 84f901bc-72ef-45cb-428f-47d0 (STDOUT, CELL)#
+#2026 10 26 14:27:19.566#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-440#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:12.810421] Downloading droplet... (STDOUT, CELL)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:19.797350] Downloaded droplet (63.1M) (STDOUT, CELL)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:19.797815] Starting health monitoring of container (STDOUT, CELL)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:20.147065] Invoking pre-start scripts. (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:20.433938] Invoking start command. (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:20.986859] > StudentHub@1.0.0 start (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:20.986886] > cds-serve (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:21.654610] {"level":"info","logger":"cds","timestamp":"2026-10-26T14:27:21.653Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"5ef15360-4307-4c9d-92bf-c734e980357d","component_name":"StudentHub-srv","component_instance":0,"source_instance":0,"organization_name":"618a61a1trial","organization_id":"29028013-4856-4523-9e1f-01b5f669bbce","space_name":"dev","space_id":"5f4fc418-10c4-435b-91e4-d9bef0869e9f","msg":"loaded model from 1 file(s):\n ","type":"log"} (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:21.655400] srv/csn.json (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:22.082532] {"level":"info","logger":"cds","timestamp":"2026-10-26T14:27:22.080Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"5ef15360-4307-4c9d-92bf-c734e980357d","component_name":"StudentHub-srv","component_instance":0,"source_instance":0,"organization_name":"618a61a1trial","organization_id":"29028013-4856-4523-9e1f-01b5f669bbce","space_name":"dev","space_id":"5f4fc418-10c4-435b-91e4-d9bef0869e9f","msg":"connect to db > hana {\n  database_id: '5f34da3a-86e3-403a-9c65-6f634586d127',\n  host: '5f34da3a-86e3-403a-9c65-6f634586d127.hna0.prod-us10.hanacloud.ondemand.com',\n  port: '443',\n  driver: 'com.sap.db.jdbc.Driver',\n  url: 'jdbc:sap://5f34da3a-86e3-403a-9c65-6f634586d127.hna0.prod-us10.hanacloud.ondemand.com:443?encrypt=true&validateCertificate=true&currentschema=E08E97B69D184F4D84A1BC028CDD074D',\n  schema: 'E08E97B69D184F4D84A1BC028CDD074D',\n  certificate: '...',\n  hdi_user: 'E08E97B69D184F4D84A1BC028CDD074D_1RQIMNFVQV458LOWUBUE6JHW2_DT',\n  hdi_password: '...',\n  user: 'E08E97B69D184F4D84A1BC028CDD074D_1RQIMNFVQV458LOWUBUE6JHW2_RT',\n  password: '...'\n}","type":"log"} (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:22.534362] {"level":"info","logger":"cds","timestamp":"2026-10-26T14:27:22.533Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"5ef15360-4307-4c9d-92bf-c734e980357d","component_name":"StudentHub-srv","component_instance":0,"source_instance":0,"organization_name":"618a61a1trial","organization_id":"29028013-4856-4523-9e1f-01b5f669bbce","space_name":"dev","space_id":"5f4fc418-10c4-435b-91e4-d9bef0869e9f","msg":"connect to API_BUSINESS_PARTNER > odata-v2 {\n  url: 'https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/',\n  headers: { APIKey: '...' }\n}","type":"log"} (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:22.539713] {"level":"info","logger":"cds","timestamp":"2026-10-26T14:27:22.539Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"5ef15360-4307-4c9d-92bf-c734e980357d","component_name":"StudentHub-srv","component_instance":0,"source_instance":0,"organization_name":"618a61a1trial","organization_id":"29028013-4856-4523-9e1f-01b5f669bbce","space_name":"dev","space_id":"5f4fc418-10c4-435b-91e4-d9bef0869e9f","msg":"using auth strategy { kind: 'xsuaa' }","type":"log"} (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:22.550301] {"level":"info","logger":"cds","timestamp":"2026-10-26T14:27:22.549Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"5ef15360-4307-4c9d-92bf-c734e980357d","component_name":"StudentHub-srv","component_instance":0,"source_instance":0,"organization_name":"618a61a1trial","organization_id":"29028013-4856-4523-9e1f-01b5f669bbce","space_name":"dev","space_id":"5f4fc418-10c4-435b-91e4-d9bef0869e9f","msg":"serving S4BusinessPartnerService {\n  at: [ '/odata/v4/s4-business-partner' ],\n  decl: 'srv/csn.json:304',\n  impl: 'srv/s4-service.js'\n}","type":"log"} (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:22.551399] {"level":"info","logger":"cds","timestamp":"2026-10-26T14:27:22.551Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"5ef15360-4307-4c9d-92bf-c734e980357d","component_name":"StudentHub-srv","component_instance":0,"source_instance":0,"organization_name":"618a61a1trial","organization_id":"29028013-4856-4523-9e1f-01b5f669bbce","space_name":"dev","space_id":"5f4fc418-10c4-435b-91e4-d9bef0869e9f","msg":"serving StudentService {\n  at: [ '/student-service' ],\n  decl: 'srv/csn.json:896',\n  impl: 'srv/student-service.js'\n}","type":"log"} (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:22.555642] {"level":"info","logger":"cds","timestamp":"2026-10-26T14:27:22.555Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"5ef15360-4307-4c9d-92bf-c734e980357d","component_name":"StudentHub-srv","component_instance":0,"source_instance":0,"organization_name":"618a61a1trial","organization_id":"29028013-4856-4523-9e1f-01b5f669bbce","space_name":"dev","space_id":"5f4fc418-10c4-435b-91e4-d9bef0869e9f","msg":"server listening on { url: 'http://localhost:8080' }","type":"log"} (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:22.556008] {"level":"info","logger":"cds","timestamp":"2026-10-26T14:27:22.555Z","layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"5ef15360-4307-4c9d-92bf-c734e980357d","component_name":"StudentHub-srv","component_instance":0,"source_instance":0,"organization_name":"618a61a1trial","organization_id":"29028013-4856-4523-9e1f-01b5f669bbce","space_name":"dev","space_id":"5f4fc418-10c4-435b-91e4-d9bef0869e9f","msg":"server v10.1.1 launched in 1554 ms","type":"log"} (STDOUT, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:23.564214] {"level":"warn","logger":"queue","correlation_id":"7e768f5b-1077-4d5e-8046-fafd90d4309d","timestamp":"2026-10-26T14:27:23.563Z","msg":"Failed to fetch targets for flush Pool resource could not be acquired within 1s","stacktrace":["Error: Pool resource could not be acquired within 1s","at /home/vcap/app/node_modules/@cap-js/db-service/lib/common/generic-pool.js:71:21","at new Promise (<anonymous>)","at new Request (/home/vcap/app/node_modules/@cap-js/db-service/lib/common/generic-pool.js:59:20)","at Pool.acquire (/home/vcap/app/node_modules/@cap-js/db-service/lib/common/generic-pool.js:141:21)","at HANAService.acquire (/home/vcap/app/node_modules/@cap-js/db-service/lib/common/DatabaseService.js:106:28)","at HANAService.begin (/home/vcap/app/node_modules/@cap-js/db-service/lib/common/DatabaseService.js:66:27)","at HANAService._begin [as dispatch] (/home/vcap/app/node_modules/@sap/cds/lib/srv/srv-tx.js:195:38)","at /home/vcap/app/node_modules/@sap/cds/lib/srv/srv-dispatch.js:20:50","at HANAService.run (/home/vcap/app/node_modules/@sap/cds/lib/srv/cds.Service.js:171:44)","at HANAService.run (/home/vcap/app/node_modules/@cap-js/db-service/lib/common/DatabaseService.js:158:18)"],"layer":"cds","component_type":"application","container_id":"10.32.2.6","component_id":"5ef15360-4307-4c9d-92bf-c734e980357d","component_name":"StudentHub-srv","component_instance":0,"source_instance":0,"organization_name":"618a61a1trial","organization_id":"29028013-4856-4523-9e1f-01b5f669bbce","space_name":"dev","space_id":"5f4fc418-10c4-435b-91e4-d9bef0869e9f","type":"log"} (STDERR, APP/PROC/WEB)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:24.849690] Container became healthy (STDOUT, CELL)#
+#2026 10 26 14:27:29.638#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-srv#flowable-async-job-executor-thread-448#
+[PollStartAppStatusExecution] 5ef15360-4307-4c9d-92bf-c734e980357d [2026-10-26T14:27:24.874443] Process became ready with guid 5ef15360-4307-4c9d-92bf-c734e980357d payload: {"instance"=>"84f901bc-72ef-45cb-428f-47d0", "index"=>0, "cell_id"=>"c839c7b1-088e-41af-b9b7-66256aacd457", "ready"=>true, "version"=>"15697f51-ffe9-4932-8438-0a4a3943ecc5"} (STDOUT, API)#

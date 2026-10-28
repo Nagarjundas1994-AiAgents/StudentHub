@@ -1,0 +1,856 @@
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:25:50.589616] Updated app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 ({"lifecycle"=>{"data"=>{"buildpacks"=>["nodejs_buildpack"]}, "type"=>"buildpack"}}) (STDOUT, API)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:25:50.684705] Updating process: "web" (STDOUT, API)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:25:58.660325] Uploading app package for app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 (STDOUT, API)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:25:58.823603] Updated app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"}) (STDOUT, API)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:08.891931] Creating build for app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 (STDOUT, API)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:09.466803] Downloading nodejs_buildpack... (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:09.509241] Downloaded nodejs_buildpack (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:09.509350] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 creating container for instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:10.671946] Security group rules were updated (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:10.746782] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully created container for instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:11.790542] Downloading app package... (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:11.790574] Downloading build artifacts cache... (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:11.893328] Downloaded build artifacts cache (224B) (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.617408] Downloaded app package (2.4M) (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.844651] -----> Nodejs Buildpack version 1.9.6 (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.844681] [31;1m**WARNING**[0m buildpack version changed from 1.9.4 to 1.9.6 (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.953122] -----> Bootstrapping python (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.954027] -----> Installing python 3.13.17 (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.954061] Copy [/tmp/buildpacks/00d125328f265a57/dependencies/6ffc15ed08f7a086278d2a86f21b1fdb/python_3.13.17_linux_x64_cflinuxfs4_c9ed5e8d.tgz] (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.060108] -----> Installing binaries (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.064004] engines.node (package.json): ^24 (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.064038] engines.npm (package.json): unspecified (use default) (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.064044] -----> Installing node 24.22.1 (STDOUT, STG)#
+#2026 10 26 14:26:18.395#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-370#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.064048] Copy [/tmp/buildpacks/00d125328f265a57/dependencies/81943ffafa7adf07ff6ffc6aaa402b41/node_24.22.1_linux_x64_cflinuxfs4_e062d949.tgz] (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:21.588658] Using default npm version: 11.19.1 (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:21.588717] -----> Installing yarn 1.22.22 (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:21.588804] Copy [/tmp/buildpacks/00d125328f265a57/dependencies/e4fe26756e9984a665478d350474fa2e/yarn_1.22.22_linux_noarch_any-stack_b6132b86.tgz] (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.028138] Installed yarn 1.22.22 (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.028179] -----> Creating runtime environment (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030388] NODE_ENV=production (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030418] NODE_HOME=/tmp/contents2027333729/deps/0/node (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030422] NODE_MODULES_CACHE=true (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030425] NODE_VERBOSE=false (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030429] NPM_CONFIG_LOGLEVEL=error (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030432] NPM_CONFIG_PRODUCTION=true (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030443] -----> Building dependencies (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030446] Prebuild detected (node_modules already exists) (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030468] Rebuilding any native modules (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.753037] rebuilt dependencies successfully (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.849790] Installing any new modules (package.json + package-lock.json) (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:23.441079] up to date in 484ms (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:23.441527] 4 packages are looking for funding (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:23.441546] run `npm fund` for details (STDOUT, STG)#
+#2026 10 26 14:26:28.767#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-381#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:24.134260] Contrast Security no credentials found. Will not write environment files. (STDOUT, STG)#
+#2026 10 26 14:26:38.804#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-405#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.050702] Exit status 0 (STDOUT, STG)#
+#2026 10 26 14:26:38.804#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-405#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.050753] Uploading droplet, build artifacts cache... (STDOUT, STG)#
+#2026 10 26 14:26:38.804#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-405#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.050799] Uploading droplet... (STDOUT, STG)#
+#2026 10 26 14:26:38.804#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-405#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.051175] Uploading build artifacts cache... (STDOUT, STG)#
+#2026 10 26 14:26:38.804#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-405#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.079191] Uploaded build artifacts cache (226B) (STDOUT, STG)#
+#2026 10 26 14:26:38.804#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-405#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:37.125267] Creating droplet for app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 (STDOUT, API)#
+#2026 10 26 14:26:49.168#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-415#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.204013] Uploaded droplet (60.2M) (STDOUT, STG)#
+#2026 10 26 14:26:49.168#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-415#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.237130] Uploading complete (STDOUT, STG)#
+#2026 10 26 14:26:49.168#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-415#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.697107] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 stopping instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:49.168#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-415#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.697143] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 destroying container for instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:49.168#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-415#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.747174] Staging complete for build 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, API)#
+#2026 10 26 14:26:49.168#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-415#
+[PollStageAppStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:45.828731] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully destroyed container for instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:25:50.589616] Updated app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 ({"lifecycle"=>{"data"=>{"buildpacks"=>["nodejs_buildpack"]}, "type"=>"buildpack"}}) (STDOUT, API)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:25:50.684705] Updating process: "web" (STDOUT, API)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:25:58.660325] Uploading app package for app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 (STDOUT, API)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:25:58.823603] Updated app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"}) (STDOUT, API)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:08.891931] Creating build for app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 (STDOUT, API)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:09.466803] Downloading nodejs_buildpack... (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:09.509241] Downloaded nodejs_buildpack (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:09.509350] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 creating container for instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:10.671946] Security group rules were updated (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:10.746782] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully created container for instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:11.790542] Downloading app package... (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:11.790574] Downloading build artifacts cache... (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:11.893328] Downloaded build artifacts cache (224B) (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.617408] Downloaded app package (2.4M) (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.844651] -----> Nodejs Buildpack version 1.9.6 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.844681] [31;1m**WARNING**[0m buildpack version changed from 1.9.4 to 1.9.6 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.953122] -----> Bootstrapping python (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.954027] -----> Installing python 3.13.17 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:12.954061] Copy [/tmp/buildpacks/00d125328f265a57/dependencies/6ffc15ed08f7a086278d2a86f21b1fdb/python_3.13.17_linux_x64_cflinuxfs4_c9ed5e8d.tgz] (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.060108] -----> Installing binaries (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.064004] engines.node (package.json): ^24 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.064038] engines.npm (package.json): unspecified (use default) (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.064044] -----> Installing node 24.22.1 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:18.064048] Copy [/tmp/buildpacks/00d125328f265a57/dependencies/81943ffafa7adf07ff6ffc6aaa402b41/node_24.22.1_linux_x64_cflinuxfs4_e062d949.tgz] (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:21.588658] Using default npm version: 11.19.1 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:21.588717] -----> Installing yarn 1.22.22 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:21.588804] Copy [/tmp/buildpacks/00d125328f265a57/dependencies/e4fe26756e9984a665478d350474fa2e/yarn_1.22.22_linux_noarch_any-stack_b6132b86.tgz] (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.028138] Installed yarn 1.22.22 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.028179] -----> Creating runtime environment (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030388] NODE_ENV=production (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030418] NODE_HOME=/tmp/contents2027333729/deps/0/node (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030422] NODE_MODULES_CACHE=true (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030425] NODE_VERBOSE=false (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030429] NPM_CONFIG_LOGLEVEL=error (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030432] NPM_CONFIG_PRODUCTION=true (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030443] -----> Building dependencies (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030446] Prebuild detected (node_modules already exists) (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.030468] Rebuilding any native modules (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.753037] rebuilt dependencies successfully (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:22.849790] Installing any new modules (package.json + package-lock.json) (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:23.441079] up to date in 484ms (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:23.441527] 4 packages are looking for funding (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:23.441546] run `npm fund` for details (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:24.134260] Contrast Security no credentials found. Will not write environment files. (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.050702] Exit status 0 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.050753] Uploading droplet, build artifacts cache... (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.050799] Uploading droplet... (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.051175] Uploading build artifacts cache... (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:36.079191] Uploaded build artifacts cache (226B) (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:37.125267] Creating droplet for app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 (STDOUT, API)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.204013] Uploaded droplet (60.2M) (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.237130] Uploading complete (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.697107] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 stopping instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.697143] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 destroying container for instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:39.747174] Staging complete for build 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, API)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:45.828731] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully destroyed container for instance 52be6975-96d7-43cb-9604-1463e95f98a3 (STDOUT, STG)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:49.232172] Updated app with guid d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 ({:droplet_guid=>"05b0b8d6-ba0c-491d-9a2d-8109cf097ea8"}) (STDOUT, API)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:50.037403] Cell 684caff8-89cd-492b-be01-b3d0835f1763 creating container for instance 6b27e613-99ba-4a01-bfce-5037f2a0598a (STDOUT, CELL)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:51.458450] Security group rules were updated (STDOUT, CELL)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:51.552974] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully created container for instance 6b27e613-99ba-4a01-bfce-5037f2a0598a (STDOUT, CELL)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:58.869290] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:26:59.330#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-349#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.156979] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.783800] > start (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.783834] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.986069] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987113] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987139] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987148] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987152] "name": "StudentHub-db", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987156] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987158] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987164] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987168] "schema": "E08E97B69D184F4D84A1BC028CDD074D", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987171] "database_id": "5f34da3a-86e3-403a-9c65-6f634586d127", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987175] "user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_RT", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987180] "hdi_user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_DT" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987182] }, (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987186] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987188] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987196] "database", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987199] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987202] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987204] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987207] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987212] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.293137] @sap/hdi-deploy, version 5.7.0 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.22.1, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.293177] Deployment started at 2026-10-26 14:27:04 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294383] Using hdb@2.30.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294572] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294626] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294629] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294632] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.295118] Deployment ended at 2026-10-26 14:27:04 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.295337] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.295577] (4s 451ms) (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312571] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312606] npm notice New major version of npm available! 11.19.1 -> 12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312615] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312621] npm notice To update run: npm install -g npm@12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312714] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.429878] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.701327] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance 6b27e613-99ba-4a01-bfce-5037f2a0598a (STDOUT, CELL)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.701368] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance 6b27e613-99ba-4a01-bfce-5037f2a0598a (STDOUT, CELL)#
+#2026 10 26 14:27:09.661#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-360#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:07.749089] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance 6b27e613-99ba-4a01-bfce-5037f2a0598a (STDOUT, CELL)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.783800] > start (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.783834] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.986069] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987113] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987139] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987148] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987152] "name": "StudentHub-db", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987156] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987158] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987164] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987168] "schema": "E08E97B69D184F4D84A1BC028CDD074D", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987171] "database_id": "5f34da3a-86e3-403a-9c65-6f634586d127", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987175] "user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_RT", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987180] "hdi_user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_DT" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987182] }, (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987186] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987188] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987196] "database", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987199] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987202] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987204] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987207] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:26:59.987212] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.293137] @sap/hdi-deploy, version 5.7.0 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.22.1, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.293177] Deployment started at 2026-10-26 14:27:04 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294383] Using hdb@2.30.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294572] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294626] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294629] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.294632] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.295118] Deployment ended at 2026-10-26 14:27:04 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.295337] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.295577] (4s 451ms) (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312571] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312606] npm notice New major version of npm available! 11.19.1 -> 12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312615] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312621] npm notice To update run: npm install -g npm@12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.312714] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.429878] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.701327] Cell 684caff8-89cd-492b-be01-b3d0835f1763 stopping instance 6b27e613-99ba-4a01-bfce-5037f2a0598a (STDOUT, CELL)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:04.701368] Cell 684caff8-89cd-492b-be01-b3d0835f1763 destroying container for instance 6b27e613-99ba-4a01-bfce-5037f2a0598a (STDOUT, CELL)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:07.749089] Cell 684caff8-89cd-492b-be01-b3d0835f1763 successfully destroyed container for instance 6b27e613-99ba-4a01-bfce-5037f2a0598a (STDOUT, CELL)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:11.362143] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 creating container for instance 9450ce1e-968a-4c59-aa36-d3c3655883ad (STDOUT, CELL)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:12.656882] Security group rules were updated (STDOUT, CELL)#
+#2026 10 26 14:27:19.830#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-431#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:12.715004] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully created container for instance 9450ce1e-968a-4c59-aa36-d3c3655883ad (STDOUT, CELL)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:20.597809] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:20.855924] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.456787] > start (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.456823] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637520] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637547] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637551] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637554] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637558] "name": "StudentHub-db", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637562] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637565] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637580] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637584] "schema": "E08E97B69D184F4D84A1BC028CDD074D", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637591] "database_id": "5f34da3a-86e3-403a-9c65-6f634586d127", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637596] "user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_RT", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637600] "hdi_user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_DT" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637602] }, (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637608] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637610] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637616] "database", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637619] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637621] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637624] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637629] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637631] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.936971] @sap/hdi-deploy, version 5.7.0 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.22.1, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937001] Deployment started at 2026-10-26 14:27:25 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937322] Using hdb@2.30.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937370] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937375] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937378] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937381] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937796] Deployment ended at 2026-10-26 14:27:25 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.938267] (4s 427ms) (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.939933] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956107] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956148] npm notice New major version of npm available! 11.19.1 -> 12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956153] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956158] npm notice To update run: npm install -g npm@12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956160] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:26.042096] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:27.577711] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 stopping instance 9450ce1e-968a-4c59-aa36-d3c3655883ad (STDOUT, CELL)#
+#2026 10 26 14:27:29.669#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-438#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:27.577769] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 destroying container for instance 9450ce1e-968a-4c59-aa36-d3c3655883ad (STDOUT, CELL)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:20.597809] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:20.855924] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.456787] > start (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.456823] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637520] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637547] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637551] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637554] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637558] "name": "StudentHub-db", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637562] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637565] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637580] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637584] "schema": "E08E97B69D184F4D84A1BC028CDD074D", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637591] "database_id": "5f34da3a-86e3-403a-9c65-6f634586d127", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637596] "user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_RT", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637600] "hdi_user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_DT" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637602] }, (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637608] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637610] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637616] "database", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637619] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637621] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637624] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637629] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:21.637631] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.936971] @sap/hdi-deploy, version 5.7.0 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.22.1, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937001] Deployment started at 2026-10-26 14:27:25 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937322] Using hdb@2.30.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937370] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937375] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937378] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937381] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.937796] Deployment ended at 2026-10-26 14:27:25 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.938267] (4s 427ms) (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.939933] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956107] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956148] npm notice New major version of npm available! 11.19.1 -> 12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956153] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956158] npm notice To update run: npm install -g npm@12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:25.956160] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:26.042096] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:27.577711] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 stopping instance 9450ce1e-968a-4c59-aa36-d3c3655883ad (STDOUT, CELL)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:27.577769] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 destroying container for instance 9450ce1e-968a-4c59-aa36-d3c3655883ad (STDOUT, CELL)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:31.470829] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully destroyed container for instance 9450ce1e-968a-4c59-aa36-d3c3655883ad (STDOUT, CELL)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:32.835912] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 creating container for instance 9df006b0-65ed-4e73-a8a1-fe69a2169b5e (STDOUT, CELL)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:33.921659] Security group rules were updated (STDOUT, CELL)#
+#2026 10 26 14:27:39.967#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-463#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:33.985443] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully created container for instance 9df006b0-65ed-4e73-a8a1-fe69a2169b5e (STDOUT, CELL)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:41.317079] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:41.580873] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.212259] > start (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.212294] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.406968] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407001] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407006] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407009] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407012] "name": "StudentHub-db", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407016] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407018] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407038] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407042] "schema": "E08E97B69D184F4D84A1BC028CDD074D", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407044] "database_id": "5f34da3a-86e3-403a-9c65-6f634586d127", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407047] "user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_RT", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407052] "hdi_user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_DT" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407055] }, (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407057] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407069] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407072] "database", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407078] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407081] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407083] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407086] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407088] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.742806] @sap/hdi-deploy, version 5.7.0 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.22.1, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.742856] Deployment started at 2026-10-26 14:27:46 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.743547] Using hdb@2.30.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744234] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744309] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744314] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744325] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744842] Deployment ended at 2026-10-26 14:27:46 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.745091] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.745275] (4s 482ms) (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.765993] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.766024] npm notice New major version of npm available! 11.19.1 -> 12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.766030] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.766033] npm notice To update run: npm install -g npm@12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.766036] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.872602] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:47.764162] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 stopping instance 9df006b0-65ed-4e73-a8a1-fe69a2169b5e (STDOUT, CELL)#
+#2026 10 26 14:27:50.142#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-459#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:47.764213] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 destroying container for instance 9df006b0-65ed-4e73-a8a1-fe69a2169b5e (STDOUT, CELL)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:41.317079] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:41.580873] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.212259] > start (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.212294] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.406968] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407001] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407006] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407009] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407012] "name": "StudentHub-db", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407016] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407018] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407038] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407042] "schema": "E08E97B69D184F4D84A1BC028CDD074D", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407044] "database_id": "5f34da3a-86e3-403a-9c65-6f634586d127", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407047] "user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_RT", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407052] "hdi_user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_DT" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407055] }, (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407057] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407069] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407072] "database", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407078] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407081] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407083] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407086] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:42.407088] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.742806] @sap/hdi-deploy, version 5.7.0 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.22.1, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.742856] Deployment started at 2026-10-26 14:27:46 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.743547] Using hdb@2.30.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744234] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744309] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744314] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744325] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.744842] Deployment ended at 2026-10-26 14:27:46 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.745091] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.745275] (4s 482ms) (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.765993] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.766024] npm notice New major version of npm available! 11.19.1 -> 12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.766030] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.766033] npm notice To update run: npm install -g npm@12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.766036] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:46.872602] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:47.764162] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 stopping instance 9df006b0-65ed-4e73-a8a1-fe69a2169b5e (STDOUT, CELL)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:47.764213] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 destroying container for instance 9df006b0-65ed-4e73-a8a1-fe69a2169b5e (STDOUT, CELL)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:51.209148] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 creating container for instance 8b8aa685-d280-49cb-bfee-1ac987868614 (STDOUT, CELL)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:52.127311] Cell 77283d80-dfa7-40ba-ba4e-265aef112085 successfully destroyed container for instance 9df006b0-65ed-4e73-a8a1-fe69a2169b5e (STDOUT, CELL)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:52.557940] Security group rules were updated (STDOUT, CELL)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:27:52.620138] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 successfully created container for instance 8b8aa685-d280-49cb-bfee-1ac987868614 (STDOUT, CELL)#
+#2026 10 26 14:28:00.294#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-466#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:00.092697] Invoking pre-start scripts. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:00.362481] Invoking start command. (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:00.912841] > start (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:00.912902] > node node_modules/@sap/hdi-deploy/deploy.js --use-hdb --parameter com.sap.hana.di.table/try_fast_table_migration=true (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.110623] VCAP_SERVICES: (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113055] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113105] "hana": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113109] { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113112] "name": "StudentHub-db", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113116] "label": "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113120] "plan": "hdi-shared", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113122] "credentials": { (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113126] "schema": "E08E97B69D184F4D84A1BC028CDD074D", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113142] "database_id": "5f34da3a-86e3-403a-9c65-6f634586d127", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113146] "user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_RT", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113150] "hdi_user": "E08E97B69D184F4D84A1BC028CDD074D_CZUTB1QX3UM8A5M68S4PFTDTJ_DT" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113156] }, (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113159] "tags": [ (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113161] "hana", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113164] "database", (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113171] "relational" (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113173] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113176] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113179] ] (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:01.113191] } (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.438945] @sap/hdi-deploy, version 5.7.0 (mode default), server version unknown (0.0.0.0), cloud version , node version 24.22.1, HDI version -1, container API version -1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.439134] Deployment started at 2026-10-26 14:28:05 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.439397] Using hdb@2.30.1 for connection (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.439462] Detection of server version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.439473] Detection of cloud version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.439480] Detection of container API version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.439533] Detection of HDI version failed; root cause: HANA Database instance is stopped (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.439933] Deployment ended at 2026-10-26 14:28:05 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.440333] Error: Option parameter is not supported by the server; based on detected server version unknown (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.440620] (4s 462ms) (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.467099] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.467161] npm notice New major version of npm available! 11.19.1 -> 12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.467171] npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.467175] npm notice To update run: npm install -g npm@12.2.1 (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.467178] npm notice (STDERR, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:05.566772] Exit status 1 (STDOUT, APP/TASK/deploy)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:06.770253] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 stopping instance 8b8aa685-d280-49cb-bfee-1ac987868614 (STDOUT, CELL)#
+#2026 10 26 14:28:10.622#Z#DEBUG#18a91d2c-d149-11f1-98d7-eeee0a9a8f1c.StudentHub-db-deployer#flowable-async-job-executor-thread-477#
+[PollExecuteTaskStatusExecution] d0f7dcd6-3bd9-498a-97ab-6927f6b677b6 [2026-10-26T14:28:06.770314] Cell d1cc041a-d5a1-41d6-b9f6-6cda736ce3f0 destroying container for instance 8b8aa685-d280-49cb-bfee-1ac987868614 (STDOUT, CELL)#
