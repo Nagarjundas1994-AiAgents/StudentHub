@@ -21,6 +21,15 @@
   },
   "private": true,
   "cds": {
+    "server": {
+      "body_parser": {
+        "limit": "20mb"
+      }
+    },
+    "dogApi": {
+      "url": "https://api.thedogapi.com/v1",
+      "apiKey": ""
+    },
     "requires": {
       "[development]": {
         "db": {

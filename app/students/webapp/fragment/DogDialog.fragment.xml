@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:unified="sap.ui.unified">
+  <Dialog title="{form>/title}" contentWidth="32rem" stretchOnPhone="true">
+    <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanM="4" labelSpanL="4" columnsM="1" columnsL="1">
+      <Label text="Name" required="true"/>
+      <Input value="{form>/name}" maxLength="120"/>
+      <Label text="Breed name"/>
+      <Input value="{form>/breedName}" maxLength="120"/>
+      <Label text="Breed ID"/>
+      <Input value="{form>/breedID}" maxLength="100" placeholder="The Dog API breed id"/>
+      <Label text="Species ID"/>
+      <Input value="{form>/speciesID}" maxLength="100" placeholder="e.g. 2"/>
+      <Label text="Date of birth"/>
+      <DatePicker value="{form>/dateOfBirth}" valueFormat="yyyy-MM-dd" displayFormat="medium"/>
+      <Label text="Gender"/>
+      <Select selectedKey="{form>/gender}">
+        <core:Item key="unknown" text="Unknown"/>
+        <core:Item key="female" text="Female"/>
+        <core:Item key="male" text="Male"/>
+      </Select>
+      <Label text="Neuter status"/>
+      <Select selectedKey="{form>/neuterStatus}">
+        <core:Item key="unknown" text="Unknown"/>
+        <core:Item key="neutered" text="Neutered"/>
+        <core:Item key="intact" text="Intact"/>
+      </Select>
+      <Label text="Country code"/>
+      <Input value="{form>/country}" maxLength="2" placeholder="e.g. US"/>
+      <Label text="Microchip ID"/>
+      <Input value="{form>/microchipID}" maxLength="100"/>
+      <Label text="External owner ID"/>
+      <Input value="{form>/externalOwnerID}" maxLength="255"/>
+      <Label text="Body condition score"/>
+      <Input value="{form>/bodyConditionScore}" type="Number" placeholder="1 to 9"/>
+      <Label text="Photo"/>
+      <VBox>
+        <Image src="{form>/imageURL}" visible="{= !!${form>/imageURL} }" width="8rem" height="8rem" decorative="true"/>
+        <unified:FileUploader buttonText="Choose image" fileType="jpg,jpeg,png,webp"
+                              mimeType="image/jpeg,image/png,image/webp" maximumFileSize="10"
+                              change=".onDogImageSelected" fileSizeExceed=".onDogImageSizeExceed"/>
+        <Text text="JPEG, PNG or WebP; maximum 10 MB. The image is sent to The Dog API."/>
+      </VBox>
+      <Label text="Description"/>
+      <TextArea value="{form>/description}" rows="3" maxLength="2000"/>
+    </f:SimpleForm>
+    <beginButton><Button text="Save" type="Emphasized" press=".onSaveDog"/></beginButton>
+    <endButton><Button text="Cancel" press=".onCancelDog"/></endButton>
+  </Dialog>
+</core:FragmentDefinition>
