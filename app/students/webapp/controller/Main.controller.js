@@ -11,8 +11,8 @@ sap.ui.define([
   "sap/m/StandardListItem"
 ], (Controller, Fragment, JSONModel, MessageBox, MessageToast, Dialog, Button, Input, List, StandardListItem) => {
   "use strict";
-  // namespace for bound operations, per model ("" = StudentService, "s4" = S4BusinessPartnerService)
-  const NS = { "": "StudentService.", s4: "S4BusinessPartnerService." };
+  // namespace for bound operations, per model ("" = StudentService, "s4" = S4BusinessPartnerService, "dog" = DogService)
+  const NS = { "": "StudentService.", s4: "S4BusinessPartnerService.", dog: "DogService." };
   const BP_CATEGORY = { 1: "Person", 2: "Organization", 3: "Group" };
 
   return Controller.extend("studenthub.ui.controller.Main", {
@@ -28,6 +28,13 @@ sap.ui.define([
       this._table().getBinding("items").refresh();
       this._table().removeSelections(true);
       this.onSelect();
+    },
+    _dogTable() { return this.byId("dogTable"); },
+    _dogCtx() { return this._dogTable().getSelectedItem()?.getBindingContext("dog"); },
+    _dogRefresh() {
+      this._dogTable().getBinding("items").refresh();
+      this._dogTable().removeSelections(true);
+      this.onSelectDog();
     },
     _err(e) { MessageBox.error(e.message || String(e)); },
 
@@ -248,6 +255,128 @@ sap.ui.define([
             const r = await this._call("deleteStudent", {}, ctx);
             MessageToast.show(r.value ? "Student deleted" : "Nothing deleted");
             this._refresh();
+          } catch (e) { this._err(e); }
+        }
+      });
+    },
+
+    // ---------- Dog Details tab (DogService / The Dog API) ----------
+    onTabSelect(e) {
+      if (e.getParameter("key") !== "dogs") return;
+      const binding = this._dogTable().getBinding("items");
+      if (binding) binding.refresh();
+    },
+
+    onSelectDog() {
+      const on = !!this._dogCtx();
+      this.byId("btnDogEdit").setEnabled(on);
+      this.byId("btnDogDel").setEnabled(on);
+    },
+
+    onRefreshDogs() {
+      try {
+        this._dogRefresh();
+      } catch (e) { this._err(e); }
+    },
+
+    // ---------- unbound actions: createDog / updateDog ----------
+    onCreateDog() {
+      this._clearDogImage();
+      this._openDogForm({ title: "Create dog", isNew: true, gender: "unknown", neuterStatus: "unknown" });
+    },
+    onEditDog() {
+      const d = this._dogCtx().getObject();
+      this._clearDogImage();
+      this._openDogForm({ title: "Update dog", isNew: false, ...d });
+    },
+    async _openDogForm(data) {
+      this.getView().getModel("form").setData(data);
+      this._dogDialog ??= await Fragment.load({
+        id: this.getView().getId(), name: "studenthub.ui.fragment.DogDialog", controller: this
+      }).then(d => { this.getView().addDependent(d); return d; });
+      this._dogDialog.open();
+    },
+    onCancelDog() {
+      this._dogDialog.close();
+      this._clearDogImage();
+    },
+    onDogImageSelected(e) {
+      const file = e.getParameter("files")?.[0] || e.getSource().getFocusDomRef().files[0];
+      if (!file) return;
+      if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+        return MessageToast.show("Choose a JPEG, PNG or WebP image.");
+      }
+      if (file.size > 10 * 1024 * 1024) {
+        return MessageToast.show("Choose an image 10 MB or smaller.");
+      }
+      this._clearDogImage();
+      this._dogImageFile = file;
+      this.getView().getModel("form").setProperty("/imageURL", URL.createObjectURL(file));
+    },
+    onDogImageSizeExceed() {
+      MessageToast.show("Choose an image 10 MB or smaller.");
+    },
+    _clearDogImage() {
+      const imageURL = this.getView().getModel("form").getProperty("/imageURL");
+      if (this._dogImageFile && imageURL?.startsWith("blob:")) {
+        URL.revokeObjectURL(imageURL);
+      }
+      this._dogImageFile = null;
+    },
+    _readDogImage(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(",")[1] || "");
+        reader.onerror = () => reject(new Error("Could not read the selected image"));
+        reader.readAsDataURL(file);
+      });
+    },
+    async onSaveDog() {
+      const d = this.getView().getModel("form").getData();
+      if (!d.name?.trim()) {
+        return MessageBox.error("Name is required");
+      }
+      const p = {
+        ID: d.ID,
+        name: d.name.trim(),
+        breedID: d.breedID,
+        breedName: d.breedName,
+        speciesID: d.speciesID,
+        description: d.description,
+        microchipID: d.microchipID,
+        externalOwnerID: d.externalOwnerID,
+        country: d.country?.trim().toUpperCase(),
+        dateOfBirth: d.dateOfBirth,
+        gender: d.gender,
+        neuterStatus: d.neuterStatus,
+        bodyConditionScore: d.bodyConditionScore === "" || d.bodyConditionScore == null
+          ? undefined
+          : Number(d.bodyConditionScore)
+      };
+      try {
+        if (this._dogImageFile) {
+          p.imageType = this._dogImageFile.type;
+          p.imageData = await this._readDogImage(this._dogImageFile);
+        }
+        await this._call(d.isNew ? "createDog" : "updateDog", p, null, "dog");
+        MessageToast.show(d.isNew ? "Dog created" : "Dog updated");
+        this._dogDialog.close();
+        this._clearDogImage();
+        this._dogRefresh();
+      } catch (e) { this._err(e); }
+    },
+
+    // ---------- bound action: deleteDog ----------
+    onDeleteDog() {
+      const ctx = this._dogCtx();
+      MessageBox.confirm(`Delete ${ctx.getProperty("name")}?`, {
+        emphasizedAction: MessageBox.Action.OK,
+        onClose: async (a) => {
+          if (a !== "OK") return;
+          try {
+            const r = await this._call("deleteDog", {}, ctx, "dog");
+            MessageToast.show(r.value ? "Dog deleted" : "Nothing deleted");
+            this._dogRefresh();
           } catch (e) { this._err(e); }
         }
       });

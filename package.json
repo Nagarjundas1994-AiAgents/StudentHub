@@ -21,12 +21,21 @@
   },
   "private": true,
   "cds": {
+    "server": {
+      "body_parser": {
+        "limit": "20mb"
+      }
+    },
+    "dogApi": {
+      "url": "https://api.thedogapi.com/v1",
+      "apiKey": ""
+    },
     "requires": {
       "[development]": {
         "db": {
           "kind": "sqlite",
           "credentials": {
-            "url": ":memory:"
+            "url": "sqlite.db"
           }
         },
         "auth": {

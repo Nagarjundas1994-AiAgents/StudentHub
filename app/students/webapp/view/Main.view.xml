@@ -5,7 +5,7 @@
       <headerContent>
         <Button text="Log out" icon="sap-icon://log" press=".onLogout"/>
       </headerContent>
-      <IconTabBar expandable="false" class="sapUiResponsiveContentPadding">
+      <IconTabBar expandable="false" class="sapUiResponsiveContentPadding" select=".onTabSelect">
         <items>
   
           <IconTabFilter text="Students" icon="sap-icon://group">
@@ -112,6 +112,47 @@
                   <Text text="{s4>Customer}"/>
                   <Text text="{s4>Supplier}"/>
                   <Text text="{s4>CreationDate}"/>
+                </ColumnListItem>
+              </items>
+            </Table>
+          </IconTabFilter>
+  
+          <!-- live data from The Dog API (DogService) -->
+          <IconTabFilter key="dogs" text="Dog Details" icon="sap-icon://heart">
+            <Table id="dogTable" items="{dog>/Dogs}" mode="SingleSelectLeft"
+                   selectionChange=".onSelectDog" growing="true" sticky="ColumnHeaders,HeaderToolbar">
+              <headerToolbar>
+                <OverflowToolbar>
+                  <Title text="Dogs"/>
+                  <ToolbarSpacer/>
+                  <Button text="Refresh" icon="sap-icon://refresh" press=".onRefreshDogs"/>
+                  <Button text="Create" icon="sap-icon://add" type="Emphasized" press=".onCreateDog"/>
+                  <Button id="btnDogEdit" text="Edit" icon="sap-icon://edit" enabled="false" press=".onEditDog"/>
+                  <Button id="btnDogDel" text="Delete" icon="sap-icon://delete" type="Reject" enabled="false" press=".onDeleteDog"/>
+                </OverflowToolbar>
+              </headerToolbar>
+              <columns>
+                <Column><Text text="Photo"/></Column>
+                <Column><Text text="Name"/></Column>
+                <Column><Text text="Breed"/></Column>
+                <Column><Text text="Species"/></Column>
+                <Column><Text text="Gender"/></Column>
+                <Column><Text text="Neutered"/></Column>
+                <Column><Text text="Date of birth"/></Column>
+                <Column><Text text="Country"/></Column>
+                <Column><Text text="BCS"/></Column>
+              </columns>
+              <items>
+                <ColumnListItem>
+                  <Avatar src="{dog>imageURL}" displayShape="Circle" customDisplaySize="2.5rem" customFontSize="1rem"/>
+                  <Text text="{dog>name}"/>
+                  <Text text="{= ${dog>breedName} || ${dog>breedID}}"/>
+                  <Text text="{dog>speciesID}"/>
+                  <Text text="{dog>gender}"/>
+                  <Text text="{dog>neuterStatus}"/>
+                  <Text text="{dog>dateOfBirth}"/>
+                  <Text text="{dog>country}"/>
+                  <Text text="{dog>bodyConditionScore}"/>
                 </ColumnListItem>
               </items>
             </Table>
