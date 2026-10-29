@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudentHub · Cohort Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2ece0;
+    --paper-2:#ebe3d3;
+    --ink:#15120e;
+    --ink-soft:#3d372e;
+    --rule:#c9bfab;
+    --rust:#bf4a26;
+    --teal:#1d6a63;
+    --ochre:#c99527;
+    --shadow:0 1px 0 var(--rule), 0 18px 40px -28px rgba(21,18,14,.55);
+    --display:"Fraunces", "Iowan Old Style", Georgia, serif;
+    --mono:"IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 520px at 82% -8%, rgba(191,74,38,.13), transparent 60%),
+      radial-gradient(700px 500px at -10% 30%, rgba(29,106,99,.09), transparent 60%),
+      var(--paper);
+    color:var(--ink);
+    font-family:var(--mono);
+    font-size:14px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* paper grain */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:9;
+    opacity:.5;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.16'/></svg>");
+  }
+
+  .sheet{
+    max-width:1180px;
+    margin:0 auto;
+    padding:34px 40px 70px;
+    position:relative;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:24px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:10px;
+    font-size:10.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .masthead .brand{font-weight:600}
+  .masthead .meta{color:var(--ink-soft);display:flex;gap:22px}
+
+  /* vertical spine label */
+  .spine{
+    position:absolute;
+    left:6px;
+    top:160px;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-size:9.5px;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    gap:16px;
+  }
+  .spine::before{content:"";width:1px;height:54px;background:var(--rule)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    display:grid;
+    grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
+    gap:34px;
+    align-items:end;
+    padding:44px 0 34px;
+  }
+  .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    font-size:10.5px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--rust);
+    margin-bottom:18px;
+  }
+  .kicker::before{content:"";width:26px;height:1px;background:var(--rust)}
+
+  h1{
+    font-family:var(--display);
+    font-weight:340;
+    font-size:clamp(46px, 7.4vw, 92px);
+    line-height:.92;
+    letter-spacing:-.028em;
+    margin:0;
+    font-variation-settings:"opsz" 120;
+  }
+  h1 em{
+    font-style:italic;
+    font-weight:420;
+    color:var(--rust);
+  }
+  .dek{
+    max-width:46ch;
+    margin:24px 0 0;
+    color:var(--ink-soft);
+    font-size:12.5px;
+    line-height:1.75;
+  }
+  .dek b{color:var(--ink);font-weight:600}
+
+  /* stats strip */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .stat{
+    padding:18px 20px 16px;
+    border-right:1px solid var(--rule);
+    position:relative;
+  }
+  .stat:last-child{border-right:0}
+  .stat .num{
+    font-family:var(--display);
+    font-size:clamp(32px,4vw,46px);
+    line-height:1;
+    font-weight:380;
+    letter-spacing:-.02em;
+    display:block;
+  }
+  .stat .lbl{
+    display:block;
+    margin-top:9px;
+    font-size:9.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .stat .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:1px}
+
+  /* donut card */
+  .donut-card{
+    border:1px solid var(--ink);
+    background:linear-gradient(160deg, #f7f2e7, var(--paper-2));
+    padding:22px 24px 20px;
+    box-shadow:var(--shadow);
+    position:relative;
+    transform:rotate(.5deg);
+  }
+  .donut-card::after{
+    content:"";
+    position:absolute;
+    inset:6px;
+    border:1px solid rgba(21,18,14,.12);
+    pointer-events:none;
+  }
+  .donut-head{
+    display:flex;
+    justify-content:space-between;
+    font-size:9.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--rule);
+    padding-bottom:8px;
+    margin-bottom:4px;
+  }
+  .donut-wrap{display:flex;align-items:center;justify-content:center;padding:10px 0 2px}
+  .donut{width:100%;max-width:236px;height:auto;overflow:visible}
+  .donut .seg{
+    fill:none;
+    stroke-width:22;
+    stroke-linecap:butt;
+    transition:stroke-dasharray 1.1s cubic-bezier(.2,.7,.2,1), stroke-dashoffset 1.1s cubic-bezier(.2,.7,.2,1);
+  }
+  .donut .center-num{
+    font-family:var(--display);
+    font-size:44px;
+    font-weight:380;
+    fill:var(--ink);
+    text-anchor:middle;
+  }
+  .donut .center-lbl{
+    font-family:var(--mono);
+    font-size:7.6px;
+    letter-spacing:.22em;
+    fill:var(--ink-soft);
+    text-anchor:middle;
+  }
+  .legend{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:7px}
+  .legend li{
+    display:grid;
+    grid-template-columns:10px 1fr auto;
+    align-items:center;
+    gap:9px;
+    font-size:10px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    border-top:1px dotted var(--rule);
+    padding-top:7px;
+  }
+  .legend .sw{width:9px;height:9px;display:block}
+  .legend .n{font-weight:600;font-variant-numeric:tabular-nums}
+
+  /* ---------- sections ---------- */
+  section{margin-top:56px}
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    border-bottom:1px solid var(--ink);
+    padding-bottom:9px;
+    margin-bottom:26px;
+  }
+  .sec-no{
+    font-size:10px;
+    letter-spacing:.18em;
+    color:var(--rust);
+    font-weight:600;
+  }
+  .sec-head h2{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(22px,2.6vw,30px);
+    letter-spacing:-.02em;
+    margin:0;
+    line-height:1;
+  }
+  .sec-head .aside{
+    margin-left:auto;
+    font-size:9.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  /* composition chart */
+  .chart{
+    border:1px solid var(--ink);
+    background:rgba(247,242,231,.55);
+    padding:26px 28px 20px;
+    box-shadow:var(--shadow);
+  }
+  .chart-scale{
+    display:flex;
+    justify-content:space-between;
+    margin-left:120px;
+    margin-bottom:8px;
+    color:var(--ink-soft);
+    font-size:8.5px;
+    letter-spacing:.1em;
+    border-bottom:1px dotted var(--rule);
+    padding-bottom:5px;
+  }
+  .bar-row{
+    display:grid;
+    grid-template-columns:100px 1fr 44px;
+    align-items:center;
+    gap:18px;
+    padding:15px 0;
+    border-bottom:1px dotted var(--rule);
+  }
+  .bar-row:last-child{border-bottom:0}
+  .bar-name{display:flex;flex-direction:column;gap:2px}
+  .bar-name .code{
+    font-family:var(--display);
+    font-size:23px;
+    font-weight:500;
+    letter-spacing:.01em;
+    line-height:1;
+  }
+  .bar-name .sub{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .track{
+    height:34px;
+    background:
+      repeating-linear-gradient(90deg, transparent 0, transparent calc(25% - 1px), rgba(21,18,14,.10) 25%);
+    display:flex;
+    align-items:stretch;
+    gap:2px;
+    position:relative;
+  }
+  .seg{
+    height:100%;
+    width:0;
+    transition:width 1s cubic-bezier(.2,.75,.2,1);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+    font-weight:600;
+    color:#f8f3e8;
+    overflow:hidden;
+  }
+  .seg.admitted{background:var(--teal)}
+  .seg.graduated{background:var(--rust)}
+  .seg.applied{background:var(--ochre);color:#211a0a}
+  .seg::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(255,255,255,.16), transparent 55%);
+    pointer-events:none;
+  }
+  .bar-total{
+    font-family:var(--display);
+    font-size:25px;
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+  }
+  .chart-foot{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+    align-items:center;
+    margin-top:18px;
+    padding-top:12px;
+    border-top:1px solid var(--ink);
+    font-size:9px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .key{display:inline-flex;align-items:center;gap:7px}
+  .key i{width:16px;height:8px;display:block}
+  .insight{
+    margin-left:auto;
+    color:var(--ink);
+    font-family:var(--display);
+    font-size:15px;
+    letter-spacing:0;
+    text-transform:none;
+    font-style:italic;
+  }
+
+  /* ---------- roster ---------- */
+  .roster{
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .r-head, .r-row{
+    display:grid;
+    grid-template-columns:34px minmax(150px,1.5fr) 70px 110px 110px 90px;
+    gap:14px;
+    align-items:center;
+    padding:0 10px;
+  }
+  .r-head{
+    font-size:8.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--ink);
+    height:34px;
+  }
+  .r-row{
+    height:52px;
+    border-bottom:1px dotted var(--rule);
+    position:relative;
+    transition:background .18s ease, padding-left .18s ease;
+  }
+  .r-row:last-child{border-bottom:0}
+  .r-row:hover{background:rgba(191,74,38,.055);padding-left:16px}
+  .r-row .idx{font-size:9px;color:#9d947f;font-variant-numeric:tabular-nums}
+  .r-row .who{display:flex;align-items:center;gap:11px;min-width:0}
+  .avatar{
+    flex:0 0 28px;
+    width:28px;height:28px;
+    border-radius:50%;
+    display:grid;place-items:center;
+    font-family:var(--display);
+    font-size:12.5px;
+    font-weight:500;
+    color:#f8f3e8;
+    background:var(--ink);
+  }
+  .r-row .nm{
+    font-family:var(--display);
+    font-size:16.5px;
+    font-weight:450;
+    letter-spacing:-.01em;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .r-row .id{font-size:9.5px;color:var(--ink-soft)}
+  .dept{
+    display:inline-block;
+    font-size:9.5px;
+    letter-spacing:.1em;
+    border:1px solid var(--rule);
+    padding:3px 7px;
+    width:max-content;
+  }
+  .pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:8.5px;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    padding:4px 8px;
+    width:max-content;
+    border:1px solid currentColor;
+  }
+  .pill::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+  .pill.admitted{color:#155a54;background:rgba(29,106,99,.09)}
+  .pill.graduated{color:#9c3a1c;background:rgba(191,74,38,.10)}
+  .pill.applied{color:#8a6513;background:rgba(201,149,39,.13)}
+  .bp{font-size:10px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .bp.none{color:#b3a892}
+
+  .colophon{
+    margin-top:52px;
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    border-top:2px solid var(--ink);
+    padding-top:12px;
+    font-size:9px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .stamp{
+    border:1.5px solid var(--rust);
+    color:var(--rust);
+    padding:5px 10px;
+    font-size:8.5px;
+    letter-spacing:.2em;
+    transform:rotate(-2.4deg);
+    align-self:start;
+  }
+
+  /* entrance */
+  .reveal{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0) * 90ms)}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .r-row{opacity:0;transform:translateY(8px);animation:rise .55s ease forwards;animation-delay:calc(.55s + var(--i,0) * 45ms)}
+
+  @media (max-width:900px){
+    .sheet{padding:26px 22px 56px}
+    .spine{display:none}
+    .hero{grid-template-columns:1fr;gap:30px;align-items:start}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2n){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+    .chart-scale{margin-left:0}
+    .bar-row{grid-template-columns:70px 1fr 34px;gap:12px}
+    .bar-name .code{font-size:18px}
+    .r-head{display:none}
+    .r-row{grid-template-columns:26px 1fr auto;height:auto;padding:11px 6px;row-gap:8px}
+    .r-row .dept{grid-column:2}
+    .r-row .bp{grid-column:2;grid-row:3}
+    .r-row .pill{grid-column:3;grid-row:1 / span 2;align-self:center}
+    .roster{border-bottom:0}
+    .insight{margin-left:0;width:100%}
+    .masthead{flex-direction:column;gap:6px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal,.r-row{opacity:1;transform:none}
+  }
+  @media print{
+    body{background:#fff}
+    body::before{display:none}
+    .sheet{max-width:none;padding:0}
+    .donut-card,.chart{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <div class="spine">Cohort Atlas · 2026 · StudentHub</div>
+
+  <header class="masthead">
+    <span class="brand">StudentHub — Academic Records</span>
+    <span class="meta"><span>Source · live StudentService</span><span>Updated 29.10.2026 · 16:21 UTC</span></span>
+  </header>
+
+  <div class="hero">
+    <div>
+      <span class="kicker reveal" style="--d:0">Cohort overview · Autumn term</span>
+      <h1 class="reveal" style="--d:1">The cohort,<br><em>in full.</em></h1>
+      <p class="dek reveal" style="--d:2">
+        Ten students across three departments, mapped by academic status and
+        S/4HANA business-partner linkage. <b>Three have graduated</b>, five are
+        admitted and two are still at application stage.
+      </p>
+    </div>
+
+    <aside class="donut-card reveal" style="--d:3" aria-label="Status distribution">
+      <div class="donut-head"><span>Fig. 01 — Status mix</span><span>n = 10</span></div>
+      <div class="donut-wrap">
+        <svg class="donut" viewBox="0 0 200 200" role="img" aria-label="Admitted 5, graduated 3, applied 2">
+          <circle cx="100" cy="100" r="70" fill="none" stroke="#ded4c0" stroke-width="22"></circle>
+          <g transform="rotate(-90 100 100)">
+            <circle class="seg" data-seg="0" cx="100" cy="100" r="70" pathLength="100" stroke="#1d6a63"></circle>
+            <circle class="seg" data-seg="1" cx="100" cy="100" r="70" pathLength="100" stroke="#bf4a26"></circle>
+            <circle class="seg" data-seg="2" cx="100" cy="100" r="70" pathLength="100" stroke="#c99527"></circle>
+          </g>
+          <text class="center-num" x="100" y="103">10</text>
+          <text class="center-lbl" x="100" y="121">STUDENTS</text>
+        </svg>
+      </div>
+      <ul class="legend">
+        <li><span class="sw" style="background:#1d6a63"></span><span>Admitted</span><span class="n">5</span></li>
+        <li><span class="sw" style="background:#bf4a26"></span><span>Graduated</span><span class="n">3</span></li>
+        <li><span class="sw" style="background:#c99527"></span><span>Applied</span><span class="n">2</span></li>
+      </ul>
+    </aside>
+  </div>
+
+  <div class="stats reveal" style="--d:4">
+    <div class="stat"><span class="num">10</span><span class="lbl">Total students</span></div>
+    <div class="stat"><span class="num">3</span><span class="lbl"><span class="dot" style="background:var(--rust)"></span>Graduated</span></div>
+    <div class="stat"><span class="num">6</span><span class="lbl">S/4HANA linked</span></div>
+    <div class="stat"><span class="num">3</span><span class="lbl">Departments</span></div>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <span class="sec-no">01</span>
+      <h2>Composition by department</h2>
+      <span class="aside">Students per dept · status split</span>
+    </div>
+
+    <div class="chart reveal" style="--d:5">
+      <div class="chart-scale" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4 students</span></div>
+
+      <div class="bar-row">
+        <div class="bar-name"><span class="code">CSE</span><span class="sub">Computer science</span></div>
+        <div class="track" role="img" aria-label="CSE: 2 admitted, 2 graduated, 0 applied">
+          <div class="seg admitted" style="--w:50%" data-w="50">2</div>
+          <div class="seg graduated" data-w="50">2</div>
+        </div>
+        <div class="bar-total">4</div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-name"><span class="code">ECE</span><span class="sub">Electronics</span></div>
+        <div class="track" role="img" aria-label="ECE: 2 admitted, 1 graduated, 0 applied">
+          <div class="seg admitted" data-w="50">2</div>
+          <div class="seg graduated" data-w="25">1</div>
+        </div>
+        <div class="bar-total">3</div>
+      </div>
+
+      <div class="bar-row">
+        <div class="bar-name"><span class="code">MBA</span><span class="sub">Business admin</span></div>
+        <div class="track" role="img" aria-label="MBA: 1 admitted, 0 graduated, 2 applied">
+          <div class="seg admitted" data-w="25">1</div>
+          <div class="seg applied" data-w="50">2</div>
+        </div>
+        <div class="bar-total">3</div>
+      </div>
+
+      <div class="chart-foot">
+        <span class="key"><i style="background:var(--teal)"></i>Admitted</span>
+        <span class="key"><i style="background:var(--rust)"></i>Graduated</span>
+        <span class="key"><i style="background:var(--ochre)"></i>Applied</span>
+        <span class="insight">CSE carries every graduate in the cohort.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="sec-no">02</span>
+      <h2>Roster</h2>
+      <span class="aside">Sorted by student ID</span>
+    </div>
+
+    <div class="roster reveal" style="--d:6">
+      <div class="r-head">
+        <span>#</span><span>Student</span><span>Dept</span><span>Status</span><span>BP number</span><span>Linkage</span>
+      </div>
+      <div id="rosterBody"></div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <span>Generated from StudentService OData · 10 records · 29 Oct 2026</span>
+    <span class="stamp">Live data</span>
+  </footer>
+</main>
+
+<script>
+  const students = [
+    { id:"ananya", name:"Ananya Rao",    dept:"ECE", status:"admitted",  bp:"20000004", email:"ananya.rao@studenthub.example" },
+    { id:"arjun",  name:"Arjun Mehta",   dept:"CSE", status:"admitted",  bp:"20000001", email:"arjun.mehta@studenthub.example" },
+    { id:"diya",   name:"Diya Sharma",   dept:"ECE", status:"admitted",  bp:"20000002", email:"diya.sharma@studenthub.example" },
+    { id:"isha",   name:"Isha Nair",     dept:"MBA", status:"admitted",  bp:"20000006", email:"isha.nair@studenthub.example" },
+    { id:"kabir",  name:"Kabir Singh",   dept:"CSE", status:"admitted",  bp:"20000003", email:"kabir.singh@studenthub.example" },
+    { id:"meera",  name:"Meera Iyer",    dept:"MBA", status:"applied",   bp:null,       email:"meera.iyer@studenthub.example" },
+    { id:"rahul",  name:"Rahul Mishra",  dept:"ECE", status:"graduated", bp:null,       email:"rahul.mishra@studenthub.example" },
+    { id:"rohan",  name:"Rohan Das",     dept:"CSE", status:"graduated", bp:null,       email:"rohan.das@studenthub.example" },
+    { id:"sneha",  name:"Sneha Kapoor",  dept:"CSE", status:"graduated", bp:"20000005", email:"sneha.kapoor@studenthub.example" },
+    { id:"vikram", name:"Vikram Patel",  dept:"MBA", status:"applied",   bp:null,       email:"vikram.patel@studenthub.example" }
+  ];
+
+  const BODY = document.getElementById("rosterBody");
+  BODY.innerHTML = students.map((s, i) => {
+    const initials = s.name.split(" ").map(p => p[0]).join("");
+    return `
+      <div class="r-row" style="--i:${i}">
+        <span class="idx">${String(i + 1).padStart(2, "0")}</span>
+        <span class="who">
+          <span class="avatar" style="background:${avatarColor(s.status)}">${initials}</span>
+          <span>
+            <span class="nm">${s.name}</span><br>
+            <span class="id">${s.email}</span>
+          </span>
+        </span>
+        <span><span class="dept">${s.dept}</span></span>
+        <span><span class="pill ${s.status}">${s.status}</span></span>
+        <span class="bp ${s.bp ? "" : "none"}">${s.bp || "—"}</span>
+        <span class="bp ${s.bp ? "" : "none"}">${s.bp ? "linked" : "unlinked"}</span>
+      </div>`;
+  }).join("");
+
+  function avatarColor(status){
+    return status === "graduated" ? "#bf4a26" : status === "applied" ? "#a87b16" : "#1d6a63";
+  }
+
+  // stacked bars
+  requestAnimationFrame(() => {
+    document.querySelectorAll(".seg[data-w]").forEach(el => {
+      el.style.width = el.dataset.w + "%";
+    });
+  });
+
+  // donut segments: values 5 / 3 / 2 of 10, gap 1 unit
+  const values = [5, 3, 2];
+  const total = 10;
+  const gap = 1;
+  let offset = 0;
+  document.querySelectorAll(".seg[data-seg]").forEach((el, i) => {
+    const len = Math.max(values[i] / total * 100 - gap, 0.5);
+    el.style.strokeDasharray = `${len} ${100 - len}`;
+    el.style.strokeDashoffset = -offset;
+    offset += values[i] / total * 100;
+  });
+</script>
+</body>
+</html>

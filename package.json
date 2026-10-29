@@ -4,11 +4,12 @@
   "type": "module",
   "dependencies": {
     "@cap-js/hana": "^3",
-    "@sap/cds": "^10",
-    "@sap/xssec": "^4",
+    "@cap-js/mcp": "^1.5.0",
     "@sap-cloud-sdk/connectivity": "^4",
     "@sap-cloud-sdk/http-client": "^4",
-    "@sap-cloud-sdk/resilience": "^4"
+    "@sap-cloud-sdk/resilience": "^4",
+    "@sap/cds": "^10",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/cds-test": "^1.0.2",
@@ -21,6 +22,9 @@
   },
   "private": true,
   "cds": {
+    "mcp": {
+      "autowire": false
+    },
     "requires": {
       "[development]": {
         "db": {
@@ -52,6 +56,12 @@
                 "user",
                 "manager"
               ]
+            },
+            "meera": {
+              "password": "meera",
+              "roles": [
+                "user"
+              ]
             }
           }
         }
@@ -67,18 +77,12 @@
         "model": "srv/external/API_BUSINESS_PARTNER",
         "[development]": {
           "credentials": {
-            "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/",
-            "headers": {
-              "APIKey": "G7oX2FGZ1nHDAaRkrrG6045eCp47xY1L"
-            }
+            "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/"
           }
         },
         "[production]": {
           "credentials": {
-            "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/",
-            "headers": {
-              "APIKey": "G7oX2FGZ1nHDAaRkrrG6045eCp47xY1L"
-            }
+            "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/"
           }
         }
       }

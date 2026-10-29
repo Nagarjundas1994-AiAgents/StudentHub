@@ -31,6 +31,24 @@ Learn more at <https://cap.cloud.sap>.
 `npm run dev` copies `app/students/webapp` into `approuter/resources/students` and starts the router without XSUAA.
 On Cloud Foundry (`mbt build && cf deploy mta_archives/*.mtar`) the same `xs-app.json` routes run with XSUAA login.
 
+## MCP endpoints (local)
+
+`S4BusinessPartnerService` is annotated `@mcp.instructions` with `@protocol: [odata, mcp]` (an MCP-annotated service otherwise drops OData) and served directly; `StudentService` goes through the `StudentTools` facade because its actions are bound to `Students`, which the generic MCP `call` tool cannot invoke:
+
+| CAP service | MCP endpoint | Tools |
+|---|---|---|
+| `StudentService` | `http://localhost:4004/mcp/student-tools` | `getTotalStudent`, `getEnrolledCourses`, `changeDepartment`, `graduate` |
+| `S4BusinessPartnerService` | `http://localhost:4004/mcp/s4-business-partner` | `describe`, `query`, `call` (`getBusinessPartnerCount`, `searchBusinessPartners`, `getStudentBusinessPartner`, `customerCountByCountry`, `linkStudentToBusinessPartner`) |
+
+The `StudentTools` facade exposes no entities, so there is no generic `query` tool over student data and every tool forwards to `StudentService`.
+The S/4HANA endpoint offers a read-only `query` over its `@readonly` projections; `@requires` rules apply.
+`changeDepartment`, `graduate` and `linkStudentToBusinessPartner` require `admin` or `manager`.
+
+Authenticate with a mocked user from `package.json` (e.g. `Nagarjun` / `nagarjun`).
+
+Autowire is disabled in `package.json` (`cds.mcp.autowire: false`), so CAP does not write the
+endpoints into your global OpenCode/Claude config. Register the URLs manually in your MCP client.
+
 ## Tests
 
 `npm test` runs [test/student-service.test.js](test/student-service.test.js) (authorization, input validation, actions).
@@ -41,3 +59,13 @@ Courses (`db/data/`) are deployed to HANA as master data; demo Students/Enrollme
 1. `mbt build && cf deploy mta_archives/StudentHub_1.0.0.mtar`
 2. In the BTP cockpit, assign the role collections `admin|manager|User (StudentHub <org>-<space>)` to users.
 3. Open the `StudentHub-approuter` URL.
+
+## S/4HANA API key
+
+The `APIKey` header is not stored in `package.json`. Locally, put it in the git-ignored `.cdsrc-private.json`:
+
+```json
+{ "requires": { "API_BUSINESS_PARTNER": { "credentials": { "headers": { "APIKey": "<your key>" } } } } }
+```
+
+For deployments, supply the same structure through the `CDS_CONFIG` environment variable or a bound destination.
