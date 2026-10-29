@@ -59,3 +59,13 @@ Courses (`db/data/`) are deployed to HANA as master data; demo Students/Enrollme
 1. `mbt build && cf deploy mta_archives/StudentHub_1.0.0.mtar`
 2. In the BTP cockpit, assign the role collections `admin|manager|User (StudentHub <org>-<space>)` to users.
 3. Open the `StudentHub-approuter` URL.
+
+## S/4HANA API key
+
+The `APIKey` header is not stored in `package.json`. Locally, put it in the git-ignored `.cdsrc-private.json`:
+
+```json
+{ "requires": { "API_BUSINESS_PARTNER": { "credentials": { "headers": { "APIKey": "<your key>" } } } } }
+```
+
+For deployments, supply the same structure through the `CDS_CONFIG` environment variable or a bound destination.
