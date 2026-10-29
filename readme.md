@@ -31,6 +31,24 @@ Learn more at <https://cap.cloud.sap>.
 `npm run dev` copies `app/students/webapp` into `approuter/resources/students` and starts the router without XSUAA.
 On Cloud Foundry (`mbt build && cf deploy mta_archives/*.mtar`) the same `xs-app.json` routes run with XSUAA login.
 
+## MCP endpoints (local)
+
+Both CAP services are exposed to AI agents through narrow MCP facades:
+
+| CAP service | MCP endpoint | Tools |
+|---|---|---|
+| `StudentService` | `http://localhost:4004/mcp/student-tools` | `getTotalStudent`, `getEnrolledCourses`, `changeDepartment`, `graduate` |
+| `S4BusinessPartnerService` | `http://localhost:4004/mcp/business-partner-tools` | `getBusinessPartnerCount`, `searchBusinessPartners`, `getAddresses`, `getStudentBusinessPartner`, `customerCountByCountry`, `linkStudentToBusinessPartner` |
+
+The facades expose no entities, so there is no generic `query` tool over student or S/4HANA data.
+Every tool forwards to its CAP service, so the same `@restrict` / `@requires` rules apply.
+`changeDepartment`, `graduate` and `linkStudentToBusinessPartner` require `admin` or `manager`.
+
+Authenticate with a mocked user from `package.json` (e.g. `Nagarjun` / `nagarjun`).
+
+Autowire is disabled in `package.json` (`cds.mcp.autowire: false`), so CAP does not write the
+endpoints into your global OpenCode/Claude config. Register the URLs manually in your MCP client.
+
 ## Tests
 
 `npm test` runs [test/student-service.test.js](test/student-service.test.js) (authorization, input validation, actions).

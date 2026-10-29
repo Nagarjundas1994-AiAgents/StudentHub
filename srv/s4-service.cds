@@ -83,3 +83,5 @@ service S4BusinessPartnerService @(requires: 'user') {
   action   linkStudentToBusinessPartner(studentID: String,
                                         bpNumber: String)     returns BusinessPartners;
 }
+
+
