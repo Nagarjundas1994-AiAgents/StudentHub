@@ -1,6 +1,7 @@
 using {API_BUSINESS_PARTNER as external} from './external/API_BUSINESS_PARTNER';
 
-@odata.draft.enabled
+@protocol: ['odata', 'mcp']
+@mcp.instructions: 'Use getBusinessPartnerCount, searchBusinessPartners, getStudentBusinessPartner and customerCountByCountry for S/4HANA business partners; read addresses via query on BusinessPartnerAddresses. Avoid GROUP BY in query (unsupported by the remote API). linkStudentToBusinessPartner requires admin or manager.'
 service S4BusinessPartnerService @(requires: 'user') {
 
   @readonly

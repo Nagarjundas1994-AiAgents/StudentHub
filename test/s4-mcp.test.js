@@ -7,19 +7,18 @@ import { mcpClient } from './mcp-client.js';
 // sandbox, so it needs network and a valid APIKey
 const { POST } = cds.test(import.meta.dirname + '/..');
 
-const URL = '/mcp/business-partner-tools';
+const URL = '/mcp/s4-business-partner';
 const admin = mcpClient(POST, ['Nagarjun', 'nagarjun']);
 const manager = mcpClient(POST, ['sukriti', 'sukriti']);
 const user = mcpClient(POST, ['meera', 'meera']);
 
 const callToolFor = async (client) => (await client.tools(URL)).find(t => t.name === 'call');
 
-describe('BusinessPartnerTools MCP facade', () => {
+describe('S4BusinessPartnerService MCP', () => {
 
-  it('exposes named tools only, with no generic query over entities', async () => {
+  it('exposes the generic describe, query and call tools', async () => {
     const tools = await admin.tools(URL);
-    assert.deepEqual(tools.map(t => t.name).sort(), ['call', 'describe']);
-    assert.ok(!tools.some(t => t.name === 'query'));
+    assert.deepEqual(tools.map(t => t.name).sort(), ['call', 'describe', 'query']);
   });
 
   it('shows the write action only to admin and manager', async () => {
@@ -27,7 +26,7 @@ describe('BusinessPartnerTools MCP facade', () => {
     const userCall = await callToolFor(user);
 
     assert.deepEqual(adminCall.inputSchema.properties.action.enum, [
-      'getBusinessPartnerCount', 'searchBusinessPartners', 'getAddresses',
+      'getBusinessPartnerCount', 'searchBusinessPartners',
       'getStudentBusinessPartner', 'customerCountByCountry', 'linkStudentToBusinessPartner'
     ]);
     assert.ok(!userCall.inputSchema.properties.action.enum.includes('linkStudentToBusinessPartner'));
@@ -43,10 +42,10 @@ describe('BusinessPartnerTools MCP facade', () => {
     assert.ok(partners.every(p => p.BusinessPartner));
   });
 
-  it('lists addresses of one business partner', async () => {
-    const addresses = await user.call(URL, 'getAddresses', { businessPartner: '202' });
-    const result = addresses.result.structuredContent.result;
-    assert.ok(result.every(a => a.BusinessPartner === '202'));
+  it('reads addresses of one business partner through query', async () => {
+    const q = await user.rpc(URL, 'tools/call', { name: 'query', arguments: {
+      cql: "SELECT from BusinessPartnerAddresses where BusinessPartner = '202'" } });
+    assert.ok(!q.result.isError);
   });
 
   it('links a student as manager and resolves it again', async () => {

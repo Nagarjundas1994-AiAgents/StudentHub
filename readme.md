@@ -33,15 +33,15 @@ On Cloud Foundry (`mbt build && cf deploy mta_archives/*.mtar`) the same `xs-app
 
 ## MCP endpoints (local)
 
-Both CAP services are exposed to AI agents through narrow MCP facades:
+`S4BusinessPartnerService` is annotated `@mcp.instructions` with `@protocol: [odata, mcp]` (an MCP-annotated service otherwise drops OData) and served directly; `StudentService` goes through the `StudentTools` facade because its actions are bound to `Students`, which the generic MCP `call` tool cannot invoke:
 
 | CAP service | MCP endpoint | Tools |
 |---|---|---|
 | `StudentService` | `http://localhost:4004/mcp/student-tools` | `getTotalStudent`, `getEnrolledCourses`, `changeDepartment`, `graduate` |
-| `S4BusinessPartnerService` | `http://localhost:4004/mcp/business-partner-tools` | `getBusinessPartnerCount`, `searchBusinessPartners`, `getAddresses`, `getStudentBusinessPartner`, `customerCountByCountry`, `linkStudentToBusinessPartner` |
+| `S4BusinessPartnerService` | `http://localhost:4004/mcp/s4-business-partner` | `describe`, `query`, `call` (`getBusinessPartnerCount`, `searchBusinessPartners`, `getStudentBusinessPartner`, `customerCountByCountry`, `linkStudentToBusinessPartner`) |
 
-The facades expose no entities, so there is no generic `query` tool over student or S/4HANA data.
-Every tool forwards to its CAP service, so the same `@restrict` / `@requires` rules apply.
+The `StudentTools` facade exposes no entities, so there is no generic `query` tool over student data and every tool forwards to `StudentService`.
+The S/4HANA endpoint offers a read-only `query` over its `@readonly` projections; `@requires` rules apply.
 `changeDepartment`, `graduate` and `linkStudentToBusinessPartner` require `admin` or `manager`.
 
 Authenticate with a mocked user from `package.json` (e.g. `Nagarjun` / `nagarjun`).
