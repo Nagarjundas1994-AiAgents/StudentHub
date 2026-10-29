@@ -9,7 +9,7 @@ using { studenthub as db } from '../db/schema';
  * @restrict rules apply again.
  */
 @mcp
-@mcp.instructions: 'Read student data with getTotalStudent and getEnrolledCourses. changeDepartment and graduate modify data and are restricted to admin and manager.'
+@mcp.instructions: 'Read student data with getTotalStudent, getStudentsByDepartment, getDepartmentSummary, getEnrolledCourses and getCourseAvailability. changeDepartment, graduate, admitStudent, enrollStudent and dropCourse modify data and are restricted to admin and manager.'
 @requires: 'user'
 service StudentTools {
 
@@ -31,6 +31,42 @@ service StudentTools {
     capacity : Integer;
     teacher  : String(100);
   };
+
+  /** Seats of a course. */
+  type CourseAvailability : {
+    code      : String;
+    title     : String;
+    capacity  : Integer;
+    enrolled  : Integer;
+    seatsLeft : Integer;
+  };
+
+  /** Students per department. */
+  type DepartmentSummary : {
+    department : String;
+    total      : Integer;
+  };
+
+  /** Students of one department (CSE, ECE, MBA). */
+  function getStudentsByDepartment(department: String) returns array of StudentInfo;
+
+  /** Number of students per department. */
+  function getDepartmentSummary() returns array of DepartmentSummary;
+
+  /** Capacity, enrolled count and free seats of one course. */
+  function getCourseAvailability(courseCode: String) returns CourseAvailability;
+
+  /** Admit a student whose status is `applied`. */
+  @requires: ['admin', 'manager']
+  action admitStudent(studentID: String) returns StudentInfo;
+
+  /** Enroll an admitted student in a course that still has free seats. */
+  @requires: ['admin', 'manager']
+  action enrollStudent(studentID: String, courseCode: String) returns CourseAvailability;
+
+  /** Remove a student from a course. */
+  @requires: ['admin', 'manager']
+  action dropCourse(studentID: String, courseCode: String) returns Boolean;
 
   /** Total number of students. */
   function getTotalStudent() returns Integer;

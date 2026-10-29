@@ -153,6 +153,84 @@ export default class StudentService extends cds.ApplicationService {
         });
 
         // =====================================
+        // FUNCTIONS: department / course reads
+        // =====================================
+        const availability = async (code) => {
+            const course = await SELECT.one.from(Courses).where({ code });
+            if (!course) return null;
+            const { n } = await SELECT.one.from(Enrollments).columns('count(*) as n').where({ course_code: code });
+            return { code, title: course.title, capacity: course.capacity, enrolled: n, seatsLeft: course.capacity - n };
+        };
+
+        this.on('getStudentsByDepartment', async (req) => {
+            const department = req.data.department?.trim().toUpperCase();
+            if (!department) return req.reject(400, 'department is required');
+            return SELECT.from(Students).where({ department });
+        });
+
+        this.on('getDepartmentSummary', () =>
+            SELECT.from(Students).columns('department', 'count(*) as total').groupBy('department')
+        );
+
+        this.on('getCourseAvailability', async (req) => {
+            const code = req.data.courseCode?.trim();
+            if (!code) return req.reject(400, 'courseCode is required');
+            return (await availability(code)) ?? req.reject(404, `Course ${code} not found`);
+        });
+
+        // =====================================
+        // ACTIONS: admit, enroll, drop
+        // =====================================
+        this.on('admitStudent', async (req) => {
+            const ID = req.data.studentID?.trim();
+            if (!ID) return req.reject(400, 'studentID is required');
+
+            const student = await SELECT.one.from(Students).where({ ID });
+            if (!student) return req.reject(404, `Student ${ID} not found`);
+            if (student.status !== 'applied') {
+                return req.reject(409, `Student ${ID} is already ${student.status}`);
+            }
+
+            await this.run(UPDATE(Students).set({ status: 'admitted' }).where({ ID }));
+            return SELECT.one.from(Students).where({ ID });
+        });
+
+        this.on('enrollStudent', async (req) => {
+            const student_ID = req.data.studentID?.trim();
+            const course_code = req.data.courseCode?.trim();
+            if (!student_ID) return req.reject(400, 'studentID is required');
+            if (!course_code) return req.reject(400, 'courseCode is required');
+
+            const student = await SELECT.one.from(Students).where({ ID: student_ID });
+            if (!student) return req.reject(404, `Student ${student_ID} not found`);
+            if (student.status !== 'admitted') {
+                return req.reject(409, `Student ${student_ID} must be admitted to enroll (status: ${student.status})`);
+            }
+
+            const course = await availability(course_code);
+            if (!course) return req.reject(404, `Course ${course_code} not found`);
+            if (course.seatsLeft <= 0) return req.reject(409, `Course ${course_code} is full`);
+
+            if (await SELECT.one.from(Enrollments).where({ student_ID, course_code })) {
+                return req.reject(409, `Student ${student_ID} is already enrolled in ${course_code}`);
+            }
+
+            await this.run(INSERT.into(Enrollments).entries({ student_ID, course_code }));
+            return availability(course_code);
+        });
+
+        this.on('dropCourse', async (req) => {
+            const student_ID = req.data.studentID?.trim();
+            const course_code = req.data.courseCode?.trim();
+            if (!student_ID) return req.reject(400, 'studentID is required');
+            if (!course_code) return req.reject(400, 'courseCode is required');
+
+            const dropped = await this.run(DELETE.from(Enrollments).where({ student_ID, course_code }));
+            if (!dropped) return req.reject(404, `Student ${student_ID} is not enrolled in ${course_code}`);
+            return true;
+        });
+
+        // =====================================
         // 7. UNBOUND ACTION: Update a student
         // =====================================
         this.on('updateStudent', async (req) => {

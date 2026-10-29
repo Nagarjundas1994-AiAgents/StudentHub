@@ -11,6 +11,14 @@ const studentInfo = ({ ID, name, email, department, status, bpNumber }) =>
 const courseInfo = ({ code, title, credits, capacity, teacher }) =>
   ({ code, title, credits, capacity, teacher });
 
+// Forward an operation whose required string arguments are trimmed and checked.
+const forward = (event, required, shape = x => x) => async (req) => {
+  const data = Object.fromEntries(required.map(f => [f, req.data[f]?.trim()]));
+  const missing = required.find(f => !data[f]);
+  if (missing) return req.reject(400, `${missing} is required`);
+  return shape(await studentService().then(srv => srv.send({ event, data })));
+};
+
 export default class StudentTools extends cds.ApplicationService {
 
   async init() {
@@ -60,6 +68,13 @@ export default class StudentTools extends cds.ApplicationService {
 
       return studentInfo(student);
     });
+
+    this.on('getStudentsByDepartment', forward('getStudentsByDepartment', ['department'], r => r.map(studentInfo)));
+    this.on('getDepartmentSummary', forward('getDepartmentSummary', []));
+    this.on('getCourseAvailability', forward('getCourseAvailability', ['courseCode']));
+    this.on('admitStudent', forward('admitStudent', ['studentID'], studentInfo));
+    this.on('enrollStudent', forward('enrollStudent', ['studentID', 'courseCode']));
+    this.on('dropCourse', forward('dropCourse', ['studentID', 'courseCode']));
 
     return super.init();
   }

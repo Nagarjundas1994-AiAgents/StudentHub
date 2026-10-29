@@ -77,8 +77,42 @@ service StudentService @(
   entity Enrollments as projection on db.Enrollments;
 
 
+  type CourseAvailability : {
+    code      : String;
+    title     : String;
+    capacity  : Integer;
+    enrolled  : Integer;
+    seatsLeft : Integer;
+  };
+
+  type DepartmentSummary : {
+    department : String;
+    total      : Integer;
+  };
+
   //get total student count
   function getTotalStudent()             returns Integer;
+
+  //students of one department (CSE, ECE, MBA)
+  function getStudentsByDepartment(department: String) returns array of Students;
+
+  //number of students per department
+  function getDepartmentSummary()        returns array of DepartmentSummary;
+
+  //capacity, enrolled count and free seats of one course
+  function getCourseAvailability(courseCode: String) returns CourseAvailability;
+
+  //admit an applied student
+  @requires: ['admin', 'manager']
+  action   admitStudent(studentID: String) returns Students;
+
+  //enroll an admitted student in a course that still has seats
+  @requires: ['admin', 'manager']
+  action   enrollStudent(studentID: String, courseCode: String) returns CourseAvailability;
+
+  //remove a student from a course
+  @requires: ['admin', 'manager']
+  action   dropCourse(studentID: String, courseCode: String) returns Boolean;
 
   //UNBOUND ACTION: ADMIT ALL CSE APPLICANTS
   @requires: ['admin', 'manager']

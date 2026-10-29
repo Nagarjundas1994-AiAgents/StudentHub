@@ -25,10 +25,9 @@ describe('S4BusinessPartnerService MCP', () => {
     const adminCall = await callToolFor(admin);
     const userCall = await callToolFor(user);
 
-    assert.deepEqual(adminCall.inputSchema.properties.action.enum, [
-      'getBusinessPartnerCount', 'searchBusinessPartners',
-      'getStudentBusinessPartner', 'customerCountByCountry', 'linkStudentToBusinessPartner'
-    ]);
+    assert.ok(adminCall.inputSchema.properties.action.enum.includes('linkStudentToBusinessPartner'));
+    assert.ok(adminCall.inputSchema.properties.action.enum.includes('unlinkStudentFromBusinessPartner'));
+    assert.ok(!userCall.inputSchema.properties.action.enum.includes('unlinkStudentFromBusinessPartner'));
     assert.ok(!userCall.inputSchema.properties.action.enum.includes('linkStudentToBusinessPartner'));
   });
 
@@ -67,6 +66,46 @@ describe('S4BusinessPartnerService MCP', () => {
 
   it('blocks a plain user from linking a student', async () => {
     const denied = await user.call(URL, 'linkStudentToBusinessPartner', { studentID: 'rohan', bpNumber: '202' });
+    assert.equal(denied.result.isError, true);
+  });
+
+  it('counts suppliers and customers and finds one partner', async () => {
+    for (const fn of ['getSupplierCount', 'getCustomerCount']) {
+      const r = await user.call(URL, fn);
+      assert.ok(r.result.structuredContent.result > 0, fn);
+    }
+    const bp = await user.call(URL, 'getBusinessPartner', { businessPartner: '202' });
+    assert.equal(bp.result.structuredContent.result.BusinessPartner, '202');
+    const missing = await user.call(URL, 'getBusinessPartner', { businessPartner: 'NOPE-0' });
+    assert.equal(missing.result.isError, true);
+  });
+
+  it('lists partners by category and searches suppliers / customers', async () => {
+    const orgs = await user.call(URL, 'getBusinessPartnersByCategory', { category: '2', top: 3 });
+    const list = orgs.result.structuredContent.result;
+    assert.ok(list.length > 0 && list.length <= 3);
+    assert.ok(list.every(p => p.BusinessPartnerCategory === '2'));
+
+    for (const [fn, key] of [['searchSuppliers', 'Supplier'], ['searchCustomers', 'Customer']]) {
+      const r = await user.call(URL, fn, { name: 'a', top: 3 });
+      assert.ok(!r.result.isError, fn);
+      assert.ok(r.result.structuredContent.result.every(x => x[key]));
+    }
+  });
+
+  it('unlinks a student and lists it as unlinked', async () => {
+    const unlinked = await user.call(URL, 'getUnlinkedStudents');
+    assert.ok(!unlinked.result.structuredContent.result.some(s => s.ID === 'sneha'));
+
+    const done = await manager.call(URL, 'unlinkStudentFromBusinessPartner', { studentID: 'sneha' });
+    assert.equal(done.result.structuredContent.result, true);
+
+    const after = await user.call(URL, 'getUnlinkedStudents');
+    assert.ok(after.result.structuredContent.result.some(s => s.ID === 'sneha'));
+
+    const again = await manager.call(URL, 'unlinkStudentFromBusinessPartner', { studentID: 'sneha' });
+    assert.equal(again.result.isError, true);
+    const denied = await user.call(URL, 'unlinkStudentFromBusinessPartner', { studentID: 'arjun' });
     assert.equal(denied.result.isError, true);
   });
 });

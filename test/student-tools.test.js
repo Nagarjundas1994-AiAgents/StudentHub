@@ -31,11 +31,12 @@ describe('StudentTools MCP facade', () => {
     const adminCall = await callToolFor(admin);
     const userCall = await callToolFor(user);
 
-    assert.deepEqual(adminCall.inputSchema.properties.action.enum, [
-      'getTotalStudent', 'getEnrolledCourses', 'changeDepartment', 'graduate'
-    ]);
-    assert.deepEqual(userCall.inputSchema.properties.action.enum, [
-      'getTotalStudent', 'getEnrolledCourses'
+    const names = c => [...c.inputSchema.properties.action.enum].sort();
+    const writes = ['admitStudent', 'changeDepartment', 'dropCourse', 'enrollStudent', 'graduate'];
+    assert.ok(writes.every(w => names(adminCall).includes(w)));
+    assert.ok(writes.every(w => !names(userCall).includes(w)));
+    assert.deepEqual(names(userCall), [
+      'getCourseAvailability', 'getDepartmentSummary', 'getEnrolledCourses', 'getStudentsByDepartment', 'getTotalStudent'
     ]);
   });
 
@@ -68,5 +69,42 @@ describe('StudentTools MCP facade', () => {
 
     const graduated = await manager.call(URL, 'graduate', { studentID: 'rohan' });
     assert.equal(graduated.result.structuredContent.result.status, 'graduated');
+  });
+
+  it('lists students by department and summarises departments', async () => {
+    const cse = await user.call(URL, 'getStudentsByDepartment', { department: 'cse' });
+    const students = cse.result.structuredContent.result;
+    assert.ok(students.length > 0 && students.every(s => s.department === 'CSE'));
+    assert.equal(students[0].createdAt, undefined);
+
+    const summary = await user.call(URL, 'getDepartmentSummary');
+    const rows = summary.result.structuredContent.result;
+    assert.equal(rows.reduce((n, r) => n + r.total, 0), 10);
+  });
+
+  it('admits, enrolls and drops through the facade, with seat counts', async () => {
+    const before = (await user.call(URL, 'getCourseAvailability', { courseCode: 'CS101' })).result.structuredContent.result;
+
+    const admitted = await manager.call(URL, 'admitStudent', { studentID: 'rahul' });
+    assert.equal(admitted.result.structuredContent.result.status, 'admitted');
+    const again = await manager.call(URL, 'admitStudent', { studentID: 'rahul' });
+    assert.equal(again.result.isError, true);
+
+    const enrolled = await manager.call(URL, 'enrollStudent', { studentID: 'rahul', courseCode: 'CS101' });
+    assert.equal(enrolled.result.structuredContent.result.enrolled, before.enrolled + 1);
+    const dup = await manager.call(URL, 'enrollStudent', { studentID: 'rahul', courseCode: 'CS101' });
+    assert.equal(dup.result.isError, true);
+
+    const dropped = await manager.call(URL, 'dropCourse', { studentID: 'rahul', courseCode: 'CS101' });
+    assert.equal(dropped.result.structuredContent.result, true);
+    const after = (await user.call(URL, 'getCourseAvailability', { courseCode: 'CS101' })).result.structuredContent.result;
+    assert.equal(after.seatsLeft, before.seatsLeft);
+  });
+
+  it('refuses to enroll an applicant and blocks plain users', async () => {
+    const applicant = await manager.call(URL, 'enrollStudent', { studentID: 'vikram', courseCode: 'CS101' });
+    assert.equal(applicant.result.isError, true);
+    const denied = await user.call(URL, 'enrollStudent', { studentID: 'arjun', courseCode: 'CS101' });
+    assert.equal(denied.result.isError, true);
   });
 });

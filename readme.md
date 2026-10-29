@@ -37,12 +37,12 @@ On Cloud Foundry (`mbt build && cf deploy mta_archives/*.mtar`) the same `xs-app
 
 | CAP service | MCP endpoint | Tools |
 |---|---|---|
-| `StudentService` | `http://localhost:4004/mcp/student-tools` | `getTotalStudent`, `getEnrolledCourses`, `changeDepartment`, `graduate` |
-| `S4BusinessPartnerService` | `http://localhost:4004/mcp/s4-business-partner` | `describe`, `query`, `call` (`getBusinessPartnerCount`, `searchBusinessPartners`, `getStudentBusinessPartner`, `customerCountByCountry`, `linkStudentToBusinessPartner`) |
+| `StudentService` | `http://localhost:4004/mcp/student-tools` | `getTotalStudent`, `getStudentsByDepartment`, `getDepartmentSummary`, `getEnrolledCourses`, `getCourseAvailability`, `changeDepartment`, `graduate`, `admitStudent`, `enrollStudent`, `dropCourse` |
+| `S4BusinessPartnerService` | `http://localhost:4004/mcp/s4-business-partner` | `describe`, `query`, `call` (`getBusinessPartnerCount`, `getBusinessPartner`, `searchBusinessPartners`, `getBusinessPartnersByCategory`, `searchSuppliers`, `searchCustomers`, `getSupplierCount`, `getCustomerCount`, `getStudentBusinessPartner`, `getUnlinkedStudents`, `customerCountByCountry`, `linkStudentToBusinessPartner`, `unlinkStudentFromBusinessPartner`) |
 
 The `StudentTools` facade exposes no entities, so there is no generic `query` tool over student data and every tool forwards to `StudentService`.
 The S/4HANA endpoint offers a read-only `query` over its `@readonly` projections; `@requires` rules apply.
-`changeDepartment`, `graduate` and `linkStudentToBusinessPartner` require `admin` or `manager`.
+`changeDepartment`, `graduate`, `admitStudent`, `enrollStudent`, `dropCourse`, `linkStudentToBusinessPartner` and `unlinkStudentFromBusinessPartner` require `admin` or `manager`.
 
 Authenticate with a mocked user from `package.json` (e.g. `Nagarjun` / `nagarjun`).
 
