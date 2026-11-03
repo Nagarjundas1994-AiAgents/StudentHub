@@ -20,6 +20,11 @@
         "uri": "/odata/v4/weather/",
         "type": "OData",
         "settings": { "odataVersion": "4.0" }
+      },
+      "dogService": {
+        "uri": "/dog-service/",
+        "type": "OData",
+        "settings": { "odataVersion": "4.0" }
       }
     }
   },
@@ -37,6 +42,10 @@
       },
       "weather": {
         "dataSource": "weatherService",
+        "settings": { "operationMode": "Server", "autoExpandSelect": true }
+      },
+      "dog": {
+        "dataSource": "dogService",
         "settings": { "operationMode": "Server", "autoExpandSelect": true }
       }
     },
