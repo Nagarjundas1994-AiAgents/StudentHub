@@ -42,6 +42,27 @@ service DogService @(
       action   deleteDog()                          returns Boolean;
     };
 
+  // one dog breed from The Dog API /breeds
+  type Breed {
+    id          : String;
+    name        : String;
+    breedGroup  : String;
+    origin      : String;
+    lifeSpan    : String; // years, e.g. 12-15
+    weight      : String; // kg, e.g. 3.2-4.5
+    height      : String; // cm, e.g. 23-29
+    temperament : String;
+    bredFor     : String;
+    description : String;
+    imageURL    : String;
+  };
+
+  //LIVE breed catalogue from The Dog API (/breeds); search is a name filter, otherwise paged
+  function getBreeds(search: String, limit: Integer, page: Integer) returns array of Breed;
+
+  //LIVE pets of the authenticated Dog API account (/pets), straight from the API
+  function getPets(limit: Integer, page: Integer)                    returns array of Dogs;
+
   //CREATE A DOG (The Dog API generates the ID)
   @requires: ['admin', 'manager']
   action   createDog(name: String,

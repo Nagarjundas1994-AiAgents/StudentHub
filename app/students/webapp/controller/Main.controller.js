@@ -14,6 +14,7 @@ sap.ui.define([
   // namespace for bound operations, per model ("" = StudentService, "s4" = S4BusinessPartnerService,
   // "dog" = DogService, "weather" = WeatherService)
   const NS = { "": "StudentService.", s4: "S4BusinessPartnerService.", dog: "DogService.", weather: "" };
+  const DOG_PAGE_SIZE = 50;
   const BP_CATEGORY = { 1: "Person", 2: "Organization", 3: "Group" };
 
   return Controller.extend("studenthub.ui.controller.Main", {
@@ -21,6 +22,11 @@ sap.ui.define([
     onInit() {
       this.getView().setModel(new JSONModel({}), "form");
       this.getView().setModel(new JSONModel({ hasData: false }), "weatherView");
+      // live /breeds and /pets from The Dog API
+      this.getView().setModel(new JSONModel({
+        breeds: [], breedsPage: 0, breedsMore: false, breedsLoaded: false, breedsBusy: false, breedQuery: "",
+        pets: [], petsPage: 0, petsMore: false, petsLoaded: false, petsBusy: false
+      }), "dogApi");
     },
 
     // ---------- helpers ----------
@@ -304,10 +310,46 @@ sap.ui.define([
 
     // ---------- Dog Details tab (DogService / The Dog API) ----------
     onTabSelect(e) {
-      if (e.getParameter("key") !== "dogs") return;
+      const key = e.getParameter("key");
+      const api = this.getView().getModel("dogApi");
+      if ((key === "breeds" || key === "pets") && !api.getProperty(`/${key}Loaded`)) this._loadDogApi(key, true);
+      if (key !== "dogs") return;
       const binding = this._dogTable().getBinding("items");
       if (binding) binding.refresh();
     },
+
+    // ---------- Dog Breeds / Pets tabs (live from The Dog API) ----------
+    // kind = "breeds" | "pets"; reset => first page, otherwise append the next page
+    async _loadDogApi(kind, reset) {
+      const api = this.getView().getModel("dogApi");
+      const page = reset ? 0 : api.getProperty(`/${kind}Page`) + 1;
+      const params = { limit: DOG_PAGE_SIZE, page };
+      if (kind === "breeds") params.search = api.getProperty("/breedQuery");
+
+      api.setProperty(`/${kind}Busy`, true);
+      try {
+        const res = await this._call(kind === "breeds" ? "getBreeds" : "getPets", params, null, "dog");
+        const rows = res.value ?? res;
+        api.setProperty(`/${kind}`, reset ? rows : [...api.getProperty(`/${kind}`), ...rows]);
+        api.setProperty(`/${kind}Page`, page);
+        // a name search returns everything at once; otherwise a full page means there may be more
+        api.setProperty(`/${kind}More`, !params.search && rows.length === DOG_PAGE_SIZE);
+        api.setProperty(`/${kind}Loaded`, true);
+      } catch (err) {
+        this._err(err);
+      } finally {
+        api.setProperty(`/${kind}Busy`, false);
+      }
+    },
+
+    onBreedSearch(e) {
+      this.getView().getModel("dogApi").setProperty("/breedQuery", (e.getParameter("query") || "").trim());
+      this._loadDogApi("breeds", true);
+    },
+    onRefreshBreeds() { this._loadDogApi("breeds", true); },
+    onBreedsMore() { this._loadDogApi("breeds", false); },
+    onRefreshPets() { this._loadDogApi("pets", true); },
+    onPetsMore() { this._loadDogApi("pets", false); },
 
     onSelectDog() {
       const on = !!this._dogCtx();

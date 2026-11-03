@@ -209,6 +209,91 @@
             </Table>
           </IconTabFilter>
   
+
+          <!-- live /breeds and /pets from The Dog API (DogService.getBreeds / getPets) -->
+          <IconTabFilter key="breeds" text="Dog Breeds" icon="sap-icon://hint">
+            <VBox class="dogApiHero">
+              <Title text="Dog Breeds" level="H2"/>
+              <Text text="Live breed catalogue from The Dog API · /breeds"/>
+            </VBox>
+            <Table id="breedTable" class="dogApiTable" items="{dogApi>/breeds}" busy="{dogApi>/breedsBusy}"
+                   growing="true" growingThreshold="25" sticky="ColumnHeaders,HeaderToolbar"
+                   noDataText="No breeds found">
+              <headerToolbar>
+                <OverflowToolbar>
+                  <Title text="{= 'Breeds · ' + ${dogApi>/breeds}.length }"/>
+                  <ToolbarSpacer/>
+                  <SearchField width="16rem" placeholder="Search breeds by name" search=".onBreedSearch"/>
+                  <Button text="Load more" icon="sap-icon://navigation-down-arrow" visible="{dogApi>/breedsMore}" press=".onBreedsMore"/>
+                  <Button text="Refresh" icon="sap-icon://refresh" press=".onRefreshBreeds"/>
+                </OverflowToolbar>
+              </headerToolbar>
+              <columns>
+                <Column width="5rem"><Text text="Photo"/></Column>
+                <Column><Text text="Breed"/></Column>
+                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Group"/></Column>
+                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Origin"/></Column>
+                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Life span"/></Column>
+                <Column minScreenWidth="Desktop" demandPopin="true"><Text text="Weight"/></Column>
+                <Column minScreenWidth="Desktop" demandPopin="true"><Text text="Height"/></Column>
+                <Column minScreenWidth="Desktop" demandPopin="true" width="22rem"><Text text="Temperament"/></Column>
+              </columns>
+              <items>
+                <ColumnListItem>
+                  <Avatar src="{dogApi>imageURL}" displayShape="Square" customDisplaySize="3.5rem" initials="🐕"/>
+                  <ObjectIdentifier title="{dogApi>name}" text="{dogApi>bredFor}"/>
+                  <ObjectStatus text="{dogApi>breedGroup}" state="Information" inverted="true"/>
+                  <Text text="{dogApi>origin}"/>
+                  <Text text="{= ${dogApi>lifeSpan} ? ${dogApi>lifeSpan} + ' yrs' : '—' }"/>
+                  <Text text="{= ${dogApi>weight} ? ${dogApi>weight} + ' kg' : '—' }"/>
+                  <Text text="{= ${dogApi>height} ? ${dogApi>height} + ' cm' : '—' }"/>
+                  <Text text="{dogApi>temperament}" maxLines="3" tooltip="{dogApi>description}"/>
+                </ColumnListItem>
+              </items>
+            </Table>
+          </IconTabFilter>
+
+          <IconTabFilter key="pets" text="Dog Pets" icon="sap-icon://pushpin-off">
+            <VBox class="dogApiHero">
+              <Title text="Dog Pets" level="H2"/>
+              <Text text="Pets of your Dog API account, read live · /pets"/>
+            </VBox>
+            <Table id="petTable" class="dogApiTable" items="{dogApi>/pets}" busy="{dogApi>/petsBusy}"
+                   growing="true" growingThreshold="25" sticky="ColumnHeaders,HeaderToolbar"
+                   noDataText="No pets in this Dog API account yet. Add one in the Dog Details tab.">
+              <headerToolbar>
+                <OverflowToolbar>
+                  <Title text="{= 'Pets · ' + ${dogApi>/pets}.length }"/>
+                  <ToolbarSpacer/>
+                  <Button text="Load more" icon="sap-icon://navigation-down-arrow" visible="{dogApi>/petsMore}" press=".onPetsMore"/>
+                  <Button text="Refresh" icon="sap-icon://refresh" press=".onRefreshPets"/>
+                </OverflowToolbar>
+              </headerToolbar>
+              <columns>
+                <Column width="5rem"><Text text="Photo"/></Column>
+                <Column><Text text="Name"/></Column>
+                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Breed"/></Column>
+                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Gender"/></Column>
+                <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Neutered"/></Column>
+                <Column minScreenWidth="Desktop" demandPopin="true"><Text text="Date of birth"/></Column>
+                <Column minScreenWidth="Desktop" demandPopin="true"><Text text="Country"/></Column>
+                <Column minScreenWidth="Desktop" demandPopin="true"><Text text="BCS"/></Column>
+              </columns>
+              <items>
+                <ColumnListItem>
+                  <Avatar src="{dogApi>imageURL}" displayShape="Circle" customDisplaySize="3.5rem" initials="🐾"/>
+                  <ObjectIdentifier title="{dogApi>name}" text="{dogApi>ID}"/>
+                  <Text text="{= ${dogApi>breedName} || ${dogApi>breedID} || '—' }"/>
+                  <ObjectStatus text="{dogApi>gender}" state="{= ${dogApi>gender} === 'male' ? 'Information' : ${dogApi>gender} === 'female' ? 'Warning' : 'None' }"/>
+                  <ObjectStatus text="{dogApi>neuterStatus}" state="{= ${dogApi>neuterStatus} === 'neutered' ? 'Success' : 'None' }"/>
+                  <Text text="{= ${dogApi>dateOfBirth} || '—' }"/>
+                  <Text text="{= ${dogApi>country} || '—' }"/>
+                  <Text text="{= ${dogApi>bodyConditionScore} || '—' }"/>
+                </ColumnListItem>
+              </items>
+            </Table>
+          </IconTabFilter>
+
         </items>
       </IconTabBar>
     </Page>

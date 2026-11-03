@@ -82,4 +82,41 @@ describe('DogService', () => {
     assert.equal(await status(POST(`${base}/updateDog`, {}, admin)), 400);
     assert.equal(await status(POST(`${base}/updateDog`, { ID: 'missing', name: 'Ghost' }, admin)), 404);
   });
+
+  it('serves live breeds and pets from The Dog API', async () => {
+    const breedsUrl = (q, limit, page) => `${base}/getBreeds(search='${q}',limit=${limit},page=${page})`;
+    assert.equal(await status(GET(breedsUrl('', 1, 0))), 401);
+    // no key configured
+    assert.equal(await status(GET(breedsUrl('', 1, 0), admin)), 503);
+    assert.equal(await status(GET(`${base}/getPets(limit=1,page=0)`, admin)), 503);
+
+    const realFetch = globalThis.fetch;
+    const urls = [];
+    process.env.DOG_API_KEY = 'test-key';
+    globalThis.fetch = async (url, init) => {
+      if (String(url).startsWith(cds.server.url ?? 'http://localhost')) return realFetch(url, init); // the test client itself
+      urls.push(String(url));
+      const body = String(url).includes('/pets')
+        ? [{ id: 'p1', name: 'Rex', sex: 'male' }]
+        : [{ id: 1, name: 'Affenpinscher', breed_group: 'Toy', life_span: '12-15',
+             weight: { metric: '3.2-4.5' }, image: { url: 'https://img/1.jpg' } }];
+      return new Response(JSON.stringify(body), { status: 200 });
+    };
+    try {
+      const breeds = (await GET(breedsUrl('', 500, -3), admin)).data.value;
+      assert.deepEqual(
+        [breeds[0].name, breeds[0].breedGroup, breeds[0].weight, breeds[0].imageURL],
+        ['Affenpinscher', 'Toy', '3.2-4.5', 'https://img/1.jpg']);
+      assert.ok(urls[0].endsWith('/breeds?limit=100&page=0'), 'limit and page are clamped');
+
+      await GET(breedsUrl('lab', 5, 0), admin);
+      assert.ok(urls[1].endsWith('/breeds/search?q=lab'));
+
+      const pets = (await GET(`${base}/getPets(limit=5,page=0)`, admin)).data.value;
+      assert.deepEqual([pets[0].ID, pets[0].name, pets[0].gender], ['p1', 'Rex', 'male']);
+    } finally {
+      globalThis.fetch = realFetch;
+      process.env.DOG_API_KEY = '';
+    }
+  });
 });

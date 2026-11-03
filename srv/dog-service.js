@@ -197,6 +197,24 @@ async function syncFromRemote(req, db, entity) {
   }
 }
 
+const toBreed = (b) => ({
+  id: String(b.id),
+  name: b.name ?? '',
+  breedGroup: b.breed_group ?? '',
+  origin: b.origin ?? '',
+  lifeSpan: b.life_span ?? '',
+  weight: b.weight?.metric ?? '',
+  height: b.height?.metric ?? '',
+  temperament: b.temperament ?? '',
+  bredFor: b.bred_for ?? '',
+  description: b.description ?? '',
+  imageURL: b.image?.url ?? ''
+});
+
+// ?limit=&page= for The Dog API: limit 1-100 (default 50), page >= 0
+const paging = ({ limit, page }) =>
+  `limit=${Math.min(Math.max(Number(limit) || 50, 1), 100)}&page=${Math.max(Number(page) || 0, 0)}`;
+
 export default class DogService extends cds.ApplicationService {
   async init() {
     const { Dogs } = this.entities;
@@ -205,6 +223,25 @@ export default class DogService extends cds.ApplicationService {
 
     // fetch the authenticated account's pets before every list/read
     this.before('READ', Dogs, (req) => syncFromRemote(req, db, DbDogs));
+
+    // =====================================
+    // READ (live): breeds and pets straight from The Dog API
+    // =====================================
+    this.on('getBreeds', async (req) => {
+      if (!apiKey()) return req.reject(503, 'DOG_API_KEY is not configured');
+      const search = req.data.search?.trim();
+      const endpoint = search
+        ? `/breeds/search?q=${encodeURIComponent(search)}`
+        : `/breeds?${paging(req.data)}`;
+      const breeds = await requestDogApi(req, endpoint);
+      return Array.isArray(breeds) ? breeds.map(toBreed) : [];
+    });
+
+    this.on('getPets', async (req) => {
+      if (!apiKey()) return req.reject(503, 'DOG_API_KEY is not configured');
+      const pets = await requestDogApi(req, `/pets?${paging(req.data)}`);
+      return Array.isArray(pets) ? pets.map(pet => toLocal(pet)) : [];
+    });
 
     // =====================================
     // CREATE: create a dog (remote + local mirror)

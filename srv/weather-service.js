@@ -1,6 +1,6 @@
-
 import cds from "@sap/cds";
-import { executeHttpRequest } from "@sap-cloud-sdk/http-client";
+
+const OPENWEATHER_URL = process.env.OPENWEATHER_URL || "https://api.openweathermap.org";
 
 export default cds.service.impl(function () {
 
@@ -19,23 +19,16 @@ export default cds.service.impl(function () {
         }
 
         try {
-            const response = await executeHttpRequest(
-                {
-                    destinationName: "WEATHER_API"
-                },
-                {
-                    method: "GET",
-                    url: "/data/2.5/weather",
-                    params: {
-                        q: city,
-                        appid: apiKey,
-                        units: "metric"
-                    },
-                    timeout: 10000
-                }
-            );
+            const query = new URLSearchParams({ q: city, appid: apiKey, units: "metric" });
+            const response = await fetch(`${OPENWEATHER_URL}/data/2.5/weather?${query}`, {
+                signal: AbortSignal.timeout(10000)
+            });
 
-            const data = response.data;
+            if (!response.ok) {
+                throw Object.assign(new Error(`OpenWeather responded ${response.status}`), { status: response.status });
+            }
+
+            const data = await response.json();
 
             return {
                 city: data.name,
@@ -51,11 +44,11 @@ export default cds.service.impl(function () {
 
             cds.log("weather").error("Weather API error:", error.message);
 
-            if (error.response?.status === 404) {
+            if (error.status === 404) {
                 return req.reject(404, "City not found.");
             }
 
-            if (error.response?.status === 401) {
+            if (error.status === 401) {
                 return req.reject(502, "Invalid Weather API key.");
             }
 
