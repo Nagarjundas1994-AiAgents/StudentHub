@@ -85,55 +85,73 @@ service StudentService @(
     seatsLeft : Integer;
   };
 
-  type DepartmentSummary : {
+  type DepartmentSummary  : {
     department : String;
     total      : Integer;
   };
 
   //get total student count
-  function getTotalStudent()             returns Integer;
+  function getTotalStudent()                                    returns Integer;
 
   //students of one department (CSE, ECE, MBA)
-  function getStudentsByDepartment(department: String) returns array of Students;
+  function getStudentsByDepartment(department: String)          returns array of Students;
 
   //number of students per department
-  function getDepartmentSummary()        returns array of DepartmentSummary;
+  function getDepartmentSummary()                               returns array of DepartmentSummary;
 
   //capacity, enrolled count and free seats of one course
-  function getCourseAvailability(courseCode: String) returns CourseAvailability;
+  function getCourseAvailability(courseCode: String)            returns CourseAvailability;
 
   //admit an applied student
-  @requires: ['admin', 'manager']
-  action   admitStudent(studentID: String) returns Students;
+  @requires: [
+    'admin',
+    'manager'
+  ]
+  action   admitStudent(studentID: String)                      returns Students;
 
   //enroll an admitted student in a course that still has seats
-  @requires: ['admin', 'manager']
+  @requires: [
+    'admin',
+    'manager'
+  ]
   action   enrollStudent(studentID: String, courseCode: String) returns CourseAvailability;
 
   //remove a student from a course
-  @requires: ['admin', 'manager']
-  action   dropCourse(studentID: String, courseCode: String) returns Boolean;
+  @requires: [
+    'admin',
+    'manager'
+  ]
+  action   dropCourse(studentID: String, courseCode: String)    returns Boolean;
 
   //UNBOUND ACTION: ADMIT ALL CSE APPLICANTS
-  @requires: ['admin', 'manager']
-  action   admitAllCSEApplicants()       returns array of Students;
+  @requires: [
+    'admin',
+    'manager'
+  ]
+  action   admitAllCSEApplicants()                              returns array of Students;
 
   //CREATE A STUDENT
-  @requires: ['admin', 'manager']
+  @requires: [
+    'admin',
+    'manager'
+  ]
   action   createStudent(name: String,
                          email: String,
                          department: String,
                          status: String,
                          ID: String,
-                         bpNumber: String) returns Students;
+                         bpNumber: String)                      returns Students;
 
 
   //UNBOUND ACTION: Update a student
-  @requires: ['admin', 'manager']
+  @requires: [
+    'admin',
+    'manager'
+  ]
   action   updateStudent(name: String,
                          email: String,
                          department: String,
                          status: String,
                          ID: String,
-                         bpNumber: String)   returns Students;
+                         bpNumber: String)                      returns Students;
 }
