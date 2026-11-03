@@ -59,6 +59,58 @@ export class S4BusinessPartnerService extends cds.ApplicationService {
     });
 
     // =====================================
+    // FUNCTIONS: single partner, category, suppliers, customers
+    // =====================================
+    this.on('getBusinessPartner', async (req) => {
+      const id = req.data.businessPartner?.trim();
+      if (!id) return req.reject(400, 'businessPartner is required');
+      return (await findPartner(id)) ?? req.reject(404, `Business partner ${id} not found in S/4HANA`);
+    });
+
+    this.on('getBusinessPartnersByCategory', async (req) => {
+      const category = req.data.category?.trim();
+      if (!category) return req.reject(400, 'category is required');
+      return bupa.run(
+        SELECT.from(BusinessPartners)
+          .where({ BusinessPartnerCategory: category })
+          .limit(clamp(req.data.top, 10, 100))
+      );
+    });
+
+    this.on('searchSuppliers', async (req) => {
+      const name = req.data.name?.trim();
+      if (!name) return req.reject(400, 'name is required');
+      return bupa.run(
+        SELECT.from(Suppliers).where`contains(SupplierFullName, ${name})`.limit(clamp(req.data.top, 10, 100))
+      );
+    });
+
+    this.on('searchCustomers', async (req) => {
+      const name = req.data.name?.trim();
+      if (!name) return req.reject(400, 'name is required');
+      return bupa.run(
+        SELECT.from(Customers).where`contains(CustomerFullName, ${name})`.limit(clamp(req.data.top, 10, 100))
+      );
+    });
+
+    this.on('getSupplierCount', () => bupa.send('GET', 'A_Supplier/$count'));
+    this.on('getCustomerCount', () => bupa.send('GET', 'A_Customer/$count'));
+
+    this.on('getUnlinkedStudents', () =>
+      SELECT.from(Students).columns('ID', 'name', 'email').where({ bpNumber: null })
+    );
+
+    this.on('unlinkStudentFromBusinessPartner', async (req) => {
+      const { studentID } = req.data;
+      const student = await SELECT.one.from(Students).columns('bpNumber').where({ ID: studentID });
+      if (!student) return req.reject(404, `Student ${studentID} not found`);
+      if (!student.bpNumber) return req.reject(409, `Student ${studentID} has no business partner`);
+
+      await UPDATE(Students).set({ bpNumber: null }).where({ ID: studentID });
+      return true;
+    });
+
+    // =====================================
     // BOUND FUNCTION: addresses of one business partner
     // =====================================
     this.on('getAddresses', BusinessPartners, async (req) => {

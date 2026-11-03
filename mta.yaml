@@ -1,16 +1,20 @@
 _schema-version: 3.3.0
 ID: StudentHub
 version: 1.0.0
-description: "A simple CAP project."
+description: "StudentHub CAP application with UI5, HANA Cloud and XSUAA"
+
 parameters:
   enable-parallel-deployments: true
+
 build-parameters:
   before-all:
     - builder: custom
       commands:
         - npm ci
         - npx cds build --production
+
 modules:
+  # CAP Node.js backend
   - name: StudentHub-srv
     type: nodejs
     path: gen/srv
@@ -20,7 +24,7 @@ modules:
     build-parameters:
       builder: npm-ci
     provides:
-      - name: srv-api # required by consumers of CAP services (e.g. approuter)
+      - name: srv-api
         properties:
           srv-url: ${default-url}
     requires:
@@ -28,6 +32,7 @@ modules:
       - name: StudentHub-db
       - name: StudentHub-destination
 
+  # HANA HDI database deployer
   - name: StudentHub-db-deployer
     type: hdb
     path: gen/db
@@ -36,23 +41,20 @@ modules:
     requires:
       - name: StudentHub-db
 
+  # UI5 AppRouter
   - name: StudentHub-approuter
     type: approuter.nodejs
     path: approuter
-    provides:
-      - name: app-api
-        properties:
-          app-uri: ${default-uri}
     parameters:
       memory: 256M
       disk-quota: 512M
       keep-existing-routes: true
     build-parameters:
-      builder: custom
-      commands:
-        - npm run copy-ui
-      ignore:
-        - node_modules/
+      builder: npm-ci
+    provides:
+      - name: app-api
+        properties:
+          app-uri: ${default-uri}
     requires:
       - name: StudentHub-auth
       - name: srv-api
@@ -63,6 +65,7 @@ modules:
           forwardAuthToken: true
 
 resources:
+  # XSUAA authentication
   - name: StudentHub-auth
     type: org.cloudfoundry.managed-service
     parameters:
@@ -74,30 +77,21 @@ resources:
         tenant-mode: dedicated
         oauth2-configuration:
           credential-types:
-            - "binding-secret"
-            - "x509"
+            - binding-secret
+            - x509
           redirect-uris:
             - https://~{app-api/app-uri}/**
-        role-collections:
-          - name: 'User (StudentHub ${org}-${space})'
-            description: 'generated'
-            role-template-references:
-              - '$XSAPPNAME.User'
-          - name: 'manager (StudentHub ${org}-${space})'
-            description: 'generated'
-            role-template-references:
-              - '$XSAPPNAME.manager'
-          - name: 'admin (StudentHub ${org}-${space})'
-            description: 'generated'
-            role-template-references:
-              - '$XSAPPNAME.admin'
     requires:
       - name: app-api
+
+  # HANA Cloud HDI container
   - name: StudentHub-db
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
       service-plan: hdi-shared
+
+  # Destination service
   - name: StudentHub-destination
     type: org.cloudfoundry.managed-service
     parameters:
