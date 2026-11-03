@@ -5,8 +5,14 @@ gen/
 
 .cdsrc-private.json
 default-*.json
+.env
+.env.*
+!.env.example
 *.sqlite
 *.sqlite-*
+*.db
+*.db-shm
+*.db-wal
 
 # MTA
 mta_archives/
