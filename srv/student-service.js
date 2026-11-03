@@ -28,7 +28,7 @@ export default class StudentService extends cds.ApplicationService {
         // =====================================
         // 2. READ: getTotalStudent
         // =====================================
-        this.on('getTotalStudent', async (req) => {
+        this.on('getTotalStudent', async () => {
             const result = await SELECT.from(Students).columns('count(*) as total');
             return result[0].total;
         });
@@ -119,7 +119,7 @@ export default class StudentService extends cds.ApplicationService {
         // =====================================
         // 5. UNBOUND ACTION: Admit all CSE applicants
         // =====================================
-        this.on('admitAllCSEApplicants', async (req) => {
+        this.on('admitAllCSEApplicants', async () => {
             const where = { department: 'CSE', status: 'applied' };
             const cseApplicants = await SELECT.from(Students).columns('ID').where(where);
 

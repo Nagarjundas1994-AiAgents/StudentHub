@@ -16,6 +16,11 @@
         "type": "OData",
         "settings": { "odataVersion": "4.0" }
       },
+      "weatherService": {
+        "uri": "/odata/v4/weather/",
+        "type": "OData",
+        "settings": { "odataVersion": "4.0" }
+      },
       "dogService": {
         "uri": "/dog-service/",
         "type": "OData",
@@ -35,10 +40,19 @@
         "dataSource": "s4Service",
         "settings": { "operationMode": "Server", "autoExpandSelect": true }
       },
+      "weather": {
+        "dataSource": "weatherService",
+        "settings": { "operationMode": "Server", "autoExpandSelect": true }
+      },
       "dog": {
         "dataSource": "dogService",
         "settings": { "operationMode": "Server", "autoExpandSelect": true }
       }
+    },
+    "resources": {
+      "css": [
+        { "uri": "css/style.css", "id": "studenthub.styles" }
+      ]
     }
   }
 }

@@ -82,3 +82,23 @@ The `APIKey` header is not stored in `package.json`. Locally, put it in the git-
 ```
 
 For deployments, supply the same structure through the `CDS_CONFIG` environment variable or a bound destination.
+
+## Weather tab
+
+The **Weather** tab in the UI5 app calls `WeatherService.getCurrentWeather(city)` and shows the
+current temperature, feels like, humidity, wind and conditions from OpenWeather.
+
+The backend needs two things:
+
+1. An API key in `OPENWEATHER_API_KEY`.
+2. A destination named `WEATHER_API` pointing to `https://api.openweathermap.org`.
+   Locally the Cloud SDK also accepts it through the `destinations` environment variable:
+
+```powershell
+$env:OPENWEATHER_API_KEY="<your key>"
+$env:destinations='[{"name":"WEATHER_API","url":"https://api.openweathermap.org"}]'
+npm start
+```
+
+Then open `http://localhost:4004/students/webapp/index.html`. In deployed environments create a
+`WEATHER_API` destination in the BTP destination service and bind `StudentHub-destination`.

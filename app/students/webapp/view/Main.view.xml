@@ -81,6 +81,57 @@
             </Table>
           </IconTabFilter>
 
+          <!-- live data from OpenWeather through WeatherService -->
+          <IconTabFilter text="Weather" icon="sap-icon://weather-proofing">
+            <VBox id="weatherTab" width="100%" alignItems="Center" class="sapUiContentPadding">
+
+              <VBox width="100%" alignItems="Center" class="weatherSearch">
+                <SearchField id="weatherCity" width="100%" placeholder="Enter a city, e.g. Bengaluru"
+                             search=".onWeatherSearch"/>
+                <Button text="Get current weather" icon="sap-icon://weather-proofing" type="Emphasized"
+                        class="sapUiSmallMarginTop" press=".onWeatherSearch"/>
+              </VBox>
+
+              <VBox id="weatherCard" visible="{weatherView>/hasData}" alignItems="Stretch"
+                    class="weatherCard sapUiMediumMarginTop">
+                <HBox width="100%" justifyContent="SpaceBetween" alignItems="Start" wrap="Wrap">
+                  <VBox>
+                    <Title text="{weatherView>/city}" level="H2" class="weatherCity"/>
+                    <Text text="{weatherView>/country}" class="weatherCountry"/>
+                  </VBox>
+                  <Text text="{weatherView>/description}" class="weatherDescription"/>
+                </HBox>
+
+                <HBox alignItems="End" class="sapUiSmallMarginTop">
+                  <Text text="{weatherView>/temperature}" class="weatherTemp"/>
+                  <Text text="°C" class="weatherUnit"/>
+                </HBox>
+
+                <HBox width="100%" justifyContent="SpaceBetween" wrap="Wrap" class="weatherMetrics">
+                  <VBox>
+                    <Text text="Feels like" class="metricLabel"/>
+                    <Text text="{= ${weatherView>/feelsLike} + ' °C' }" class="metricValue"/>
+                  </VBox>
+                  <VBox>
+                    <Text text="Humidity" class="metricLabel"/>
+                    <Text text="{= ${weatherView>/humidity} + ' %' }" class="metricValue"/>
+                  </VBox>
+                  <VBox>
+                    <Text text="Wind" class="metricLabel"/>
+                    <Text text="{= ${weatherView>/windSpeed} + ' m/s' }" class="metricValue"/>
+                  </VBox>
+                </HBox>
+              </VBox>
+
+              <VBox visible="{= !${weatherView>/hasData} }" alignItems="Center"
+                    class="sapUiLargeMarginTop weatherEmpty">
+                <Text text="No weather loaded yet" class="weatherEmptyTitle"/>
+                <Text text="Search for a city above to see its current conditions."/>
+              </VBox>
+
+            </VBox>
+          </IconTabFilter>
+
           <!-- live data from SAP S/4HANA (S4BusinessPartnerService) -->
           <IconTabFilter text="Business Partners" icon="sap-icon://customer">
             <Table id="bpTable" items="{s4>/BusinessPartners}" mode="SingleSelectLeft"

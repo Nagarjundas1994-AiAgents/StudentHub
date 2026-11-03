@@ -5,7 +5,7 @@ import { mcpClient } from './mcp-client.js';
 
 // ponytail: like s4-service.test.js, this hits the live SAP API Business Hub
 // sandbox, so it needs network and a valid APIKey
-const { POST } = cds.test(import.meta.dirname + '/..');
+const { POST } = cds.test(import.meta.dirname + '/..', '--in-memory');
 
 const URL = '/mcp/s4-business-partner';
 const admin = mcpClient(POST, ['Nagarjun', 'nagarjun']);

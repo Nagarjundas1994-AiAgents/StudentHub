@@ -49,7 +49,7 @@ export default cds.service.impl(function () {
 
         } catch (error) {
 
-            console.error("Weather API error:", error.message);
+            cds.log("weather").error("Weather API error:", error.message);
 
             if (error.response?.status === 404) {
                 return req.reject(404, "City not found.");

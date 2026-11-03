@@ -27,3 +27,6 @@ mta_archives/
 
 # UI5 app copied into the approuter at build time
 approuter/resources/students/
+
+
+.env

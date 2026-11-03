@@ -3,7 +3,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 // ponytail: hits the live SAP API Business Hub sandbox, so it needs network and a valid APIKey
-const { GET, POST } = cds.test(import.meta.dirname + '/..');
+const { GET, POST } = cds.test(import.meta.dirname + '/..', '--in-memory');
 
 const admin = { auth: { username: 'Nagarjun', password: 'nagarjun' } };
 const base = '/odata/v4/s4-business-partner';
