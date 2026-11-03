@@ -2,7 +2,7 @@ import cds from '@sap/cds';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-const { GET, POST, DELETE } = cds.test(import.meta.dirname + '/..');
+const { GET, POST, DELETE } = cds.test(import.meta.dirname + '/..', '--in-memory');
 
 const admin = { auth: { username: 'Nagarjun', password: 'nagarjun' } };
 const manager = { auth: { username: 'sukriti', password: 'sukriti' } };

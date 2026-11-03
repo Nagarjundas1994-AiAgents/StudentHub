@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 // no key: run against the local mirror only (no network calls in tests)
 process.env.DOG_API_KEY = '';
 
-const { GET, POST } = cds.test(import.meta.dirname + '/..');
+const { GET, POST } = cds.test(import.meta.dirname + '/..', '--in-memory');
 
 const admin = { auth: { username: 'Nagarjun', password: 'nagarjun' } };
 const manager = { auth: { username: 'sukriti', password: 'sukriti' } };

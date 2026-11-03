@@ -3,7 +3,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { mcpClient } from './mcp-client.js';
 
-const { GET, POST } = cds.test(import.meta.dirname + '/..');
+const { GET, POST } = cds.test(import.meta.dirname + '/..', '--in-memory');
 
 const URL = '/mcp/student-tools';
 const admin = mcpClient(POST, ['Nagarjun', 'nagarjun']);
