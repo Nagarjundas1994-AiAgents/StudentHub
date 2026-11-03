@@ -12,13 +12,14 @@ sap.ui.define([
 ], (Controller, Fragment, JSONModel, MessageBox, MessageToast, Dialog, Button, Input, List, StandardListItem) => {
   "use strict";
   // namespace for bound operations, per model ("" = StudentService, "s4" = S4BusinessPartnerService)
-  const NS = { "": "StudentService.", s4: "S4BusinessPartnerService." };
+  const NS = { "": "StudentService.", s4: "S4BusinessPartnerService.", weather: "" };
   const BP_CATEGORY = { 1: "Person", 2: "Organization", 3: "Group" };
 
   return Controller.extend("studenthub.ui.controller.Main", {
 
     onInit() {
       this.getView().setModel(new JSONModel({}), "form");
+      this.getView().setModel(new JSONModel({ hasData: false }), "weatherView");
     },
 
     // ---------- helpers ----------
@@ -74,6 +75,17 @@ sap.ui.define([
 
     _bpItem(bp) {
       return { title: bp.BusinessPartnerFullName, description: bp.BusinessPartner, info: BP_CATEGORY[bp.BusinessPartnerCategory] };
+    },
+
+    // 24.6 -> "24.6", anything unusable -> "—"
+    _num(v) {
+      const n = Number(v);
+      return Number.isFinite(n) ? n.toFixed(1) : "—";
+    },
+
+    // "scattered clouds" -> "Scattered clouds"
+    _sentence(s) {
+      return s ? s.charAt(0).toUpperCase() + s.slice(1) : "";
     },
 
     // back to the approuter landing page
@@ -173,6 +185,35 @@ sap.ui.define([
         MessageToast.show(`Linked to ${bp.BusinessPartnerFullName}`);
         this._refresh();
       });
+    },
+
+    // ---------- Weather tab (WeatherService) ----------
+    async onWeatherSearch(e) {
+      const input = this.byId("weatherCity");
+      const query = e?.getParameter?.("query");
+      const city = String(query !== undefined ? query : input.getValue() ?? "").trim();
+      if (!city) return MessageBox.error("Please enter a city name.");
+      input.setValue(city);
+
+      const tab = this.byId("weatherTab");
+      tab.setBusy(true);
+      try {
+        const w = await this._call("getCurrentWeather", { city }, null, "weather");
+        this.getView().getModel("weatherView").setData({
+          hasData: true,
+          city: w.city || city,
+          country: w.country || "",
+          temperature: this._num(w.temperature),
+          feelsLike: this._num(w.feelsLike),
+          humidity: w.humidity ?? "—",
+          windSpeed: this._num(w.windSpeed),
+          description: this._sentence(w.description)
+        });
+      } catch (err) {
+        this._err(err);
+      } finally {
+        tab.setBusy(false);
+      }
     },
 
     // ---------- S/4HANA tab ----------

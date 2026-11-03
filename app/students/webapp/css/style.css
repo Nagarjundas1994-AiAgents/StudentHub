@@ -1,0 +1,82 @@
+/* Weather tab */
+
+.weatherSearch {
+  width: 100%;
+  max-width: 30rem;
+}
+
+.weatherCard {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 46rem;
+  padding: 1.75rem 2rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #0a6ed1 0%, #1b4f9c 55%, #0b2b57 100%);
+  box-shadow: 0 0.75rem 2rem rgba(11, 43, 87, 0.28);
+  color: #ffffff;
+}
+
+.weatherCard .sapMTitle,
+.weatherCard .sapMText {
+  color: #ffffff;
+}
+
+.weatherCard .weatherCity {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.weatherCard .weatherCountry {
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.weatherCard .weatherDescription {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.weatherCard .weatherTemp {
+  font-size: 4.5rem;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.15rem;
+}
+
+.weatherCard .weatherUnit {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-left: 0.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.weatherCard .weatherMetrics {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  gap: 1rem;
+}
+
+.weatherCard .metricLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.weatherCard .metricValue {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.weatherEmpty .sapMText {
+  color: #556b82;
+  text-align: center;
+}
+
+.weatherEmpty .weatherEmptyTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
